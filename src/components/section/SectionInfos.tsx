@@ -3,6 +3,7 @@ import styles from '../../components/section/style.module.scss';
 import { Form } from '../../components/form/Form.tsx';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Link } from 'react-router-dom';
 
 interface SectionInfosProps {
     title?: string;
@@ -27,7 +28,8 @@ export const SectionInfos: React.FC<SectionInfosProps> = (props) => {
                 <LinkedInIcon className={styles.icons} />
             </div>
 
-            <p>Não tem conta? <span>Cadastre-se</span></p>
+            <p>Não tem conta? <Link to="/create-account">Cadastre-se</Link></p>
+            <p><Link to="/reset-password">Esqueceu a senha?</Link></p>
         </section>
     )
 }
