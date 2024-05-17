@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from '../../components/section/style.module.scss';
-import { Form } from '../../components/form/Form.tsx';
+import { Login } from '../form/Login.tsx';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Link } from 'react-router-dom';
+
 
 interface SectionInfosProps {
     title?: string;
@@ -12,10 +13,11 @@ interface SectionInfosProps {
 export const SectionInfos: React.FC<SectionInfosProps> = (props) => {
     return (
         <section className={styles.sectionInfos}>
+            
             <h1>{props.title}</h1>
             <p className={styles.data}>Insira seus dados</p>
 
-            <Form />
+            <Login />
 
             <div className={styles.firstDiv}>
                 <div className={styles.noneDiv}></div>
@@ -28,8 +30,8 @@ export const SectionInfos: React.FC<SectionInfosProps> = (props) => {
                 <LinkedInIcon className={styles.icons} />
             </div>
 
-            <p>Não tem conta? <Link to="/create-account">Cadastre-se</Link></p>
-            <p><Link to="/reset-password">Esqueceu a senha?</Link></p>
+            <p>Não tem conta? <Link to={"/create-account"} className={styles.linkStyle}>Cadastre-se</Link></p>
+            
         </section>
     )
 }
