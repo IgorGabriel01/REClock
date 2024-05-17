@@ -1,7 +1,5 @@
 #  ⏰ REClock 
 
-![REClock Logo](./src/assets/img/logo/logo-readme.png)
-
 ## Descrição
 O REClock é uma aplicação que nasceu com o intuito de combater um problema que sucede varias empresas: a frequente ocorrência de colaboradores esquecerem de registrar o ponto. Nós da equipe SIXDev, idealizamos uma aplicação que tem como objetivo ser simples e intuitiva para esses índices possam ser eradicados.
 
