@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+#root {
+    display: flex;
+}
+
+:root {
+    --principal-color: #083644;
+    --second-color: #11455f;
+    --third-color: #197297;
+    --fourth-color: #FFFFFF;
+}

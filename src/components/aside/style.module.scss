@@ -1,0 +1,52 @@
+.aside {
+    width: 60%;
+    height: 100vh;
+    background-color: rgba(#000000, 1);
+    background-image: url('../../assets/img/background/background-aside-reclock.png');
+    background-size: cover;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    div.asideContent {
+        margin-left: 2rem;
+        width: 35%;
+
+        div:first-child {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            img {
+                width: 70px;
+            }
+
+            p {
+                font-size: 3.25rem;
+                font-weight: 600;
+                color: var(--fourth-color);
+                align-self: flex-end;
+            }
+        }
+
+        div.hr {
+            min-width: 270px;
+            height: 0.3rem;
+            border-radius: 0.5rem;
+            background-color: var(--fourth-color);
+        }
+
+        div:last-child {
+            p {
+                width: 100%;
+                margin-top: 0.25rem;
+                font-size: 2.2rem;
+                font-weight: 500;
+                color: var(--fourth-color);
+            }
+        }
+    }
+
+}
