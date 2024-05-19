@@ -17,4 +17,4 @@ function PagesRoutes() {
     );
 }
 
-export default PagesRoutes; 
+export default PagesRoutes;  

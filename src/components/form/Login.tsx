@@ -19,6 +19,7 @@ export const Login: React.FC = () => {
             </div>
 
             <button onClick={() => navigate("/home")}>Entrar</button>
+            
         </form>
     )
 }
