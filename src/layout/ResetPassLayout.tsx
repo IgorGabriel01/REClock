@@ -7,10 +7,7 @@ export const ResetPassLayout: React.FC = () => {
     return (
         <div id="root">
             <Aside></Aside>
-            
-                <ResetPassword/>
-            
-            
+                <ResetPassword/>        
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../../layout/AppLayout";
-import { LayoutCadastro } from "../../layout/LayoutCadastro";
+import { LayoutCadastro } from "../../layout/LayoutCreateAccount";
 import { ResetPassLayout } from "../../layout/ResetPassLayout";
 import { Home } from "../home/Home";
 
