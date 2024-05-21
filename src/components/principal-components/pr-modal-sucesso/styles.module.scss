@@ -1,0 +1,44 @@
+.stmodal {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+    .modal {
+        width: 40%;
+        height: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--fourth-color);
+        border-radius: 1rem;
+        z-index: 9999;
+
+        p {
+            font-size: 1.2rem;
+            color: var(--third-color);
+            font-weight: 600;
+        }
+
+        button {
+            border-radius: 1rem;
+            font-weight: 700;
+            border: none;
+            height: 2rem;
+            width: 50%;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transition: 0.5s;
+            opacity: 0.8;
+        }
+    }
+}

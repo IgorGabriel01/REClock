@@ -1,20 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { SectionInfos } from './components/section/SectionInfos';
-import { CreateAccount } from './components/form/CreateAccount';
-import { ResetPassword } from './components/form/ResetPassword';
-import { Title } from '@mui/icons-material';
+import { Aside } from "./components/sub-components/sb-aside/Aside";
+import { Login } from "./components/principal-components/pr-login/Login";
+import { ResetPassword } from "./components/principal-components/pr-esqueceu-senha/ResetPassword";
+import { CreateAccount } from "./components/principal-components/pr-cadastrar/CreateAccount";
+import { Modal } from "./components/principal-components/pr-modal-sucesso/Modal";
+import { Home } from "./components/principal-components/pr-home/Home";
 
-const App: React.FC = () => {
-    return(
-        <Router> 
-            <Routes> 
-                <Route path='/' element={<SectionInfos title="Entre na sua conta"/>}/>
-                <Route path="/create-account" element={<CreateAccount />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
-            </Routes>
-        </Router>
-    );
+import "./styles/global.css";
+
+export const App: React.FC = () => {
+    return (
+        <>
+            <Home />
+        </>
+    )
 }
-
-export default App;
