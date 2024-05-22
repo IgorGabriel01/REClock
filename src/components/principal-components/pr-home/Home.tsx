@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DescriptionIcon from '@mui/icons-material/Description';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Link } from "react-router-dom";
 
 export const Home: React.FC = () => {
 
@@ -21,7 +22,7 @@ export const Home: React.FC = () => {
                     <a href="">Funcionalidades</a>
                 </nav>
 
-                <a className={styles.loginbutton} href="../../principal-components/pr-login/Login.tsx">Login</a>
+                <Link className={styles.loginbutton} to={"/login"}>Login</Link>
             </header>
 
             <main>
@@ -32,8 +33,8 @@ export const Home: React.FC = () => {
                     </div>
 
                     <div>
-                        <a href="">Cadastrar</a>
-                        <a href="">Fazer login</a>
+                        <Link to={"create-account"}>Cadastrar</Link>
+                        <Link to={"/login"}>Fazer login</Link>
                     </div>
                 </section>
 

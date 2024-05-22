@@ -3,6 +3,7 @@ import { Button } from "../../sub-components/sb-button/Button";
 import styles from "./styles.module.scss";
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Link } from "react-router-dom";
 
 export const Login: React.FC = () => {
 
@@ -27,7 +28,7 @@ export const Login: React.FC = () => {
                         <p>Lembre-se</p>
                     </div>
 
-                    <p>Esqueceu a senha?</p>
+                    <p><Link to={"/reset-password"}> Esqueceu a senha?</Link></p>
                 </div>
 
                 <Button title="Entrar" />
@@ -46,7 +47,7 @@ export const Login: React.FC = () => {
                 <LinkedInIcon fontSize="large" />
             </div>
 
-            <p className={styles.ftext}>Não tem conta? <span>Cadastre-se</span></p>
+            <p className={styles.ftext}>Não tem conta? <span><Link to={"create-account"}>Cadastre-se</Link></span></p>
         </section>
     )
 }
