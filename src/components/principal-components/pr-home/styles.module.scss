@@ -2,7 +2,7 @@
     background-color: var(--third-color);
     width: 100%;
     height: 4.5rem;
-    padding: 0rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,10 +11,17 @@
     img {
         width: 10rem;
         height: 1.8rem;
+        transition: 0.8s;
+    }
+
+    img:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: 0.8s;
     }
 
     nav {
-        width: 30%;
+        width: 25%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -31,26 +38,6 @@
             color: var(--second-color);
             transition: 0.5s;
         }
-    }
-
-    .loginbutton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: var(--third-color);
-        background-color: var(--fourth-color);
-        width: 6.5rem;
-        height: 2.2rem;
-        border-radius: 0.4rem;
-        transition: 0.5s;
-        font-weight: 500;
-    }
-
-    .loginbutton:hover {
-        background-color: var(--second-color);
-        color: var(--fourth-color);
-        transition: 0.5s;
     }
 }
 
@@ -71,11 +58,12 @@
         color: var(--fourth-color);
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
+            padding: 0.5rem 0rem;
         }
 
         p {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
     }
 
@@ -130,7 +118,7 @@
     div {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.7rem;
 
         p:first-child {
             font-size: 1.2rem;
@@ -138,12 +126,12 @@
         }
 
         h2 {
-            font-size: 3.2rem;
-            font-weight: 900;
+            font-size: 3rem;
+            font-weight: 800;
         }
 
         p:last-child {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 300;
         }
     }
@@ -153,14 +141,14 @@
     width: 100%;
     background-color: #000;
     color: var(--third-color);
-    padding: 1rem 3rem;
+    padding: 1.5rem 2rem;
     display: grid;
     gap: 1.5rem;
 
     .firstdiv {
         height: 35%;
         display: grid;
-        gap: 2rem;
+        gap: 1.5rem;
         grid-template-columns: 1fr 2fr 1fr;
 
         div {

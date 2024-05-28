@@ -18,11 +18,9 @@ export const Home: React.FC = () => {
                 <img src={Logo} alt="Logo REClock" />
 
                 <nav>
-                    <a href="">Conheça o sistema</a>
-                    <a href="">Funcionalidades</a>
+                    <a href="#conheca">Conheça o sistema</a>
+                    <a href="#funcionalidades">Funcionalidades</a>
                 </nav>
-
-                <Link className={styles.loginbutton} to={"/login"}>Login</Link>
             </header>
 
             <main>
@@ -38,9 +36,9 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
-                <section className={styles.conhecaapp}>
+                <section id="conheca" className={styles.conhecaapp}>
                     <div>
-                        <p>Conheça o APP</p>
+                        <p>CONHEÇA O SISTEMA</p>
                         <h2>A solução moderna para gestão de ponto e jornada de trabalho.</h2>
                         <p>A REClock, o controle de ponto é feito de forma simples, rápida e segura, direto do seu celular ou computador. Seus colaboradores podem bater ponto de onde estiverem, seja no escritório, em casa ou em campo, usando apenas a geolocalização do dispositivo.</p>
                     </div>
@@ -48,7 +46,7 @@ export const Home: React.FC = () => {
                     <img src={ImgConheca} alt="Ilustração REClock" />
                 </section>
 
-                <section className={styles.funcionalidades}>
+                <section id="funcionalidades" className={styles.funcionalidades}>
 
                     <div className={styles.firstdiv}>
                         <div>
