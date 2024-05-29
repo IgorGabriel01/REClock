@@ -1,4 +1,4 @@
-import PagesRoutes from "./components/services/PageRoutes";
+import PagesRoutes from "./services/PageRoutes";
 import "./styles/global.css";
 import { BrowserRouter } from "react-router-dom";
 
