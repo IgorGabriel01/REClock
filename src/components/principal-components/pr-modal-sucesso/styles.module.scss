@@ -26,12 +26,16 @@
             font-weight: 600;
         }
 
+        .link {
+            width: 60%;
+        }
+
         button {
             border-radius: 1rem;
             font-weight: 700;
             border: none;
-            height: 2rem;
-            width: 50%;
+            height: 2.2rem;
+            width: 100%;
             transition: 0.5s;
             cursor: pointer;
         }

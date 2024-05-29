@@ -174,7 +174,7 @@ export const ResetPassword: React.FC = () => {
                         } />
                     </div>
 
-                    <Link className={styles.button} to={"/navigation"} onClick={(e: any) => {
+                    <Link className={styles.button} to={"/sucess-reset-password"} onClick={(e: any) => {
                         if (formState.input1 == false || formState.input2 == false || formState.input3 == false || formState.input4 == false || formState.input5 == false) {
                             e.preventDefault();
                         }

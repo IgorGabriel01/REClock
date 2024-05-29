@@ -174,7 +174,7 @@ export const CreateAccount: React.FC = () => {
                             } />
                         </div>
 
-                        <Link className={styles.button} to={"/navigation"} onClick={(e) => {
+                        <Link className={styles.button} to={"/sucess-create-account"} onClick={(e) => {
                             if (formState.input1 == false || formState.input2 == false || formState.input3 == false || formState.input4 == false || formState.input5 == false) {
                                 e.preventDefault();
                             }
