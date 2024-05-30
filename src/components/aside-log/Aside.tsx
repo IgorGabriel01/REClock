@@ -1,5 +1,5 @@
 import React from 'react';
-import logoReclock from '../../../assets/img/logos/logo-reclock.png';
+import logoReclock from '../../assets/img/logos/logo-reclock.png';
 import styles from './style.module.scss';
 
 export const Aside: React.FC = () => {

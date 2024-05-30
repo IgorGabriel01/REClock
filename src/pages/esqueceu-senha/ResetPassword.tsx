@@ -1,13 +1,14 @@
+import React, { useState } from 'react';
 import styles from "./styles.module.scss";
-import { Aside } from "../../sub-components/sb-aside/Aside";
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useState } from 'react';
-import {Modal} from '../pr-modal-sucesso/Modal';
+import { Aside } from '../../components/aside-log/Aside';
+import { Modal } from '../sucesso-modal/Modal';
 
-export const CreateAccount: React.FC = () => {
 
-    document.title = 'REClock - Criar Conta';
+export const ResetPassword: React.FC = () => {
+
+    document.title = 'REClock - Redefinir senha';
 
     const [formState, setFormState] = useState({
         input1: false,
@@ -17,14 +18,14 @@ export const CreateAccount: React.FC = () => {
         input5: false
     });
 
-    const [open, setOpen] = useState<boolean>(false); //aqui é pra ele setar quando aparecer
     const [senhaState, setSenhaState] = useState(" ");
+    const [open, setOpen] = useState<boolean>(false);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Form submitted');
-        setOpen((prevOpen) => !prevOpen); // aqui ele altera o estado do modal
-        console.log('Modal open state:', !open); //alterou certinho
+        setOpen((prevOpen) => !prevOpen);
+        console.log('Modal open state:', !open);
     };
 
     function entradaValueEventOne(eventElement: any, context: string) {
@@ -33,7 +34,7 @@ export const CreateAccount: React.FC = () => {
 
         eventElement.target.nextElementSibling.textContent = `
         ${context}
-        `;
+        `
 
         eventElement.target.nextElementSibling.classList.add(styles.spanerror);
         eventElement.target.nextElementSibling.classList.remove(styles.span);
@@ -72,16 +73,17 @@ export const CreateAccount: React.FC = () => {
                     entradaValueEventOne(eventElement, 'Digite um e-mail válido');
                     setFormState({ ...formState, input3: false });
                 } else {
-                    entradaValueEventTwo(eventElement);
+                    entradaValueEventTwo(eventElement)
                     setFormState({ ...formState, input3: true });
                 }
                 break;
             case "senha":
-                if (eventElement.target.value.length <= 6) {
-                    entradaValueEventOne(eventElement, 'A senha precisa ter mais que 6 caracteres');
+                if (eventElement.target.value.length < 6) {
+                    entradaValueEventOne(eventElement, 'A senha precisa ter mais que 5 caracteres')
                     setFormState({ ...formState, input4: false });
                 } else {
                     entradaValueEventTwo(eventElement);
+
                     setFormState({ ...formState, input4: true });
                     setSenhaState(eventElement.target.value);
                 }
@@ -94,76 +96,99 @@ export const CreateAccount: React.FC = () => {
                     entradaValueEventTwo(eventElement);
                     setFormState({ ...formState, input5: true });
                 }
-                break;
+                break
             default:
                 break;
         }
     }
 
     return (
-        <div className={styles.dcadastrar}>
+        <div className={styles.dresetpassword}>
+
             <Aside />
 
-            <section className={styles.cadastrar}>
+            <section className={styles.resetpassword}>
 
                 <ArrowBackIcon className={styles.arrowicon} onClick={() => {
                     window.history.back();
                 }} />
 
                 <div className={styles.firstdiv}>
-                    <h1>Crie sua conta</h1>
-                    <p className={styles.firstp}>Cadastre seus dados</p>
+
+                    <h1>Redefinir Senha</h1>
+                    <p className={styles.firstp}>Insira seu dados</p>
+
                 </div>
 
                 <form className={styles.form} onSubmit={handleSubmit}>
-                
+
                     <div className={styles.inputs}>
                         <label htmlFor="nome">Nome completo</label>
-                        <input required type="text" id="nome" placeholder='Digite seu nome' className={styles.input} onBlur={(e) => validaInputs(e)} />
+                        <input required type="text" id="nome" placeholder='Digite seu nome' className={styles.input} onBlur={(e) => {
+                            validaInputs(e);
+                        }} />
                         <span className={styles.span}>generic text</span>
                     </div>
 
                     <div className={styles.inputs}>
                         <label htmlFor="matricula">Matrícula</label>
-                        <input required type="number" id="matricula" placeholder='Digite sua matrícula' className={styles.input} onBlur={(e) => validaInputs(e)} />
+                        <input required type="number" id="matricula" placeholder='Digite sua matrícula' className={styles.input} onBlur={(e) => {
+                            validaInputs(e);
+                        }} />
                         <span className={styles.span}>generic text</span>
                     </div>
 
                     <div className={styles.inputs}>
                         <label htmlFor="email">E-mail</label>
-                        <input required type="email" id="email" placeholder='Digite seu email' className={styles.input} onBlur={(e) => validaInputs(e)} />
+                        <input required type="email" id="email" placeholder='Digite seu email' className={styles.input} onBlur={(e) => {
+                            validaInputs(e);
+                        }} />
                         <span className={styles.span}>generic text</span>
                     </div>
 
                     <div className={styles.inputs}>
-                        <label htmlFor="senha">Senha</label>
-                        <input required type="password" id="senha" placeholder='Digite sua senha' className={styles.input} onBlur={(e) => validaInputs(e)} />
+                        <label htmlFor="senha">Nova senha</label>
+                        <input required type="password" id="senha" placeholder='Digite sua senha' className={styles.input} onBlur={(e) => {
+                            validaInputs(e);
+                        }} />
                         <span className={styles.span}>generic text</span>
                         <VisibilityOffIcon className={styles.showpasswordfirst} onClick={() => {
                             const senhaInput: any = document.getElementById('senha');
-                            senhaInput.type = senhaInput.type === 'password' ? 'text' : 'password';
-                        }} />
+                            if (senhaInput.type === 'password') {
+                                senhaInput.type = 'text';
+                            } else {
+                                senhaInput.type = 'password';
+                            }
+                        }
+                        } />
                     </div>
 
                     <div className={styles.inputs}>
-                        <label htmlFor="confirmasenha">Confirme sua senha</label>
-                        <input required type="password" id="confirmasenha" placeholder='Confirme sua senha' className={styles.input} onBlur={(e) => validaInputs(e)} />
+                        <label htmlFor="confirmasenha">Confirme sua nova senha</label>
+                        <input required type="password" id="confirmasenha" placeholder='Confirme sua senha' className={styles.input} onBlur={(e) => {
+                            validaInputs(e);
+                        }} />
                         <span className={styles.span}>generic text</span>
                         <VisibilityOffIcon className={styles.showpasswordsecond} onClick={() => {
                             const senhaInput: any = document.getElementById('confirmasenha');
-                            senhaInput.type = senhaInput.type === 'password' ? 'text' : 'password';
-                        }} />
+                            if (senhaInput.type === 'password') {
+                                senhaInput.type = 'text';
+                            } else {
+                                senhaInput.type = 'password';
+                            }
+                        }
+                        } />
                     </div>
 
                     <button className={styles.button} type="submit">
-                        Cadastrar
+                        Redefinir
                     </button>
+                    
                     <Modal 
                     isOpen={open}
-                    title={'Conta criada com sucesso!'}
-                    description={'Faça login para continuar'}
-                    /> {/*Aqui ele chama o modal caso o formulario seja validado */} 
-                    <p className={styles.ftext}>Ao clicar em cadastra-se, você concorda com nossos<br></br> <span>termos de serviço e política de privacidade</span></p>
+                    title={'Senha redefinida com sucesso!'}
+                    description={'Você pode fazer login com sua nova senha.'}
+                    /> 
                 </form>
             </section>
         </div>

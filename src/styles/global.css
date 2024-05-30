@@ -5,6 +5,10 @@
     font-family: "Inter", sans-serif;
 }
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 :root {
     --principal-color: #083644;
     --second-color: #11455f;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from "../../sub-components/sb-button/Button";
+import { Button } from "../../components/button/Button";
 import styles from "./styles.module.scss";
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Link } from "react-router-dom";
-import { Aside } from "../../sub-components/sb-aside/Aside";
+import { Aside } from "../../components/aside-log/Aside";
 
 export const Login: React.FC = () => {
 

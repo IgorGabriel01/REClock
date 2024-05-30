@@ -1,7 +1,7 @@
-import Logo from "../../../assets/img/logos/logo-reclock-smp.png";
-import ImgConheca from "../../../assets/img/conheca-ilustração-main.png";
-import CellphoneIlustrationP from "../../../assets/img/p-illustration-cellphone.png";
-import CellphoneIlustrationU from "../../../assets/img/u-illustration-cellphone.png";
+import Logo from "../../assets/img/logos/logo-reclock-smp.png";
+import ImgConheca from "../../assets/img/conheca-ilustração-main.png";
+import CellphoneIlustrationP from "../../assets/img/p-illustration-cellphone.png";
+import CellphoneIlustrationU from "../../assets/img/u-illustration-cellphone.png";
 import styles from "./styles.module.scss";
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -107,22 +107,22 @@ export const Home: React.FC = () => {
                     <div>
                         <h4>PRODUTO</h4>
                         <ul>
-                            <li>Funcionalidades</li>
+                            <li><a href="#funcionalidades">Funcionalidades</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4>EMPRESA</h4>
                         <ul>
-                            <li>Sobre nós</li>
+                            <Link className={styles.li} to={'./sobre'}><li>Sobre nós</li></Link> 
                         </ul>
                     </div>
 
                     <div>
                         <h4>LEGAL</h4>
                         <ul>
-                            <li>Termos de uso</li>
-                            <li>Política de privacidade</li>
+                            <Link className={styles.li} to={'./termos-privacidade'}><li>Termos de uso</li></Link>
+                            <Link className={styles.li} to={'./termos-privacidade'}><li>Política de privacidade</li></Link>
                         </ul>
                     </div>
                 </section>

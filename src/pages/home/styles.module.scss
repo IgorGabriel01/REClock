@@ -2,7 +2,7 @@
     background-color: var(--third-color);
     width: 100%;
     height: 4.5rem;
-    padding: 2rem 2rem;
+    padding: 2.5rem 3rem    ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,7 +21,7 @@
     }
 
     nav {
-        width: 25%;
+        width: 23%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -42,7 +42,7 @@
 }
 
 .sectioninfos {
-    background-image: url('./../../../assets/img/background/background-section-home.png');
+    background-image: url('../../assets/img/background/background-section-home.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 30rem;
@@ -291,15 +291,25 @@
                 flex-direction: column;
                 gap: 0.4rem;
 
+                .li {
+                    text-decoration: none;
+                }
+
                 li {
                     color: var(--fourth-color);
                     font-weight: 400;
                     font-size: 0.9rem;
                     transition: 0.5s;
                     cursor: pointer;
+
+                    a{
+                        text-decoration: none;
+                        color: var(--fourth-color);
+                        transition: 0.5s;
+                    }
                 }
 
-                li:hover {
+                li:hover, a:hover {
                     transition: 0.5s;
                     color: var(--second-color);
                 }

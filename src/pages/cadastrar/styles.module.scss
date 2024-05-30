@@ -195,6 +195,14 @@
                     color: var(--second-color);
                     transition: 0.5s;
                 }
+
+                .linkpl {
+                    color: var(--second-color);
+                    text-decoration: underline;
+                    font-weight: 800;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
             }
         }
     }
