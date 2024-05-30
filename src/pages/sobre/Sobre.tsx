@@ -24,7 +24,7 @@ export const Sobre: React.FC = () => {
             <h1>Conheça nosso time</h1>
 
             <section>
-                <Integrante img={Imgbrunno} nome="Brunno Assunção" descricao="Nasci em Recife, hoje estou com 22 anos e cursando Análise e Desenvolvimento de Sistemas na UNIT. Desenvolver um software é arte, corrigir bug, faz parte. Domínio em Backend, onde procuro me qualificar cada vez mais." links={{ linkedin: 'https://www.linkedin.com/in/brunnoassuncao/', github: 'https://github.com/brunnolink' }} />
+                <Integrante img={Imgbrunno} nome="Brunno Assunção" descricao="Nascido em Recife, hoje estou com 22 anos e cursando Análise e Desenvolvimento de Sistemas na UNIT. Desenvolver um software é arte, corrigir bug, faz parte. Domínio em Backend, onde procuro me qualificar cada vez mais." links={{ linkedin: 'https://www.linkedin.com/in/brunnoassuncao/', github: 'https://github.com/brunnolink' }} />
 
                 <Integrante img={Imgdirelly} nome="Direlly Kaline" descricao="Nascida em Recife, tenho 18 anos e sou graduanda em Análise e Desenvolvimento de Sistemas pela UNIT, ainda estou descobrindo os horizontes na área de TI." links={{ linkedin: 'https://www.linkedin.com/in/direlly-kaline-barbosa-2b0b902b6/', github: 'https://github.com/DirellyBarbosa' }} />
 
