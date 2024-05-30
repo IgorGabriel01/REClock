@@ -153,20 +153,20 @@
             .button {
                 width: 100%;
                 text-decoration: none;
-                button {
-                    font-size: 0.9rem;
-                    font-weight: 700;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0.8rem auto;
-                    width: 60%;
-                    border: none;
-                    border-radius: 3rem;
-                    height: 2rem;
-                    transition: 0.8s;
-                    padding: 1.2rem;
-                }
+                background-color: var(--second-color);
+                font-size: 0.9rem;
+                font-weight: 700;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0.8rem auto;
+                width: 60%;
+                border: none;
+                border-radius: 3rem;
+                height: 2rem;
+                transition: 0.8s;
+                padding: 1.2rem;
+                color: var(--fourth-color);
             }
 
             button:hover {

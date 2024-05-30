@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import styles from "./styles.module.scss";
-import { Button } from "../../sub-components/sb-button/Button";
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Link } from "react-router-dom";
 import { Aside } from "../../sub-components/sb-aside/Aside";
-
+import { Modal } from '../pr-modal-sucesso/Modal';
 
 export const ResetPassword: React.FC = () => {
 
@@ -17,10 +15,17 @@ export const ResetPassword: React.FC = () => {
         input3: false,
         input4: false,
         input5: false
-
     });
 
     const [senhaState, setSenhaState] = useState(" ");
+    const [open, setOpen] = useState<boolean>(false);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log('Form submitted');
+        setOpen((prevOpen) => !prevOpen);
+        console.log('Modal open state:', !open);
+    };
 
     function entradaValueEventOne(eventElement: any, context: string) {
         eventElement.target.classList.add(styles.inputerror);
@@ -114,7 +119,7 @@ export const ResetPassword: React.FC = () => {
 
                 </div>
 
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={handleSubmit}>
 
                     <div className={styles.inputs}>
                         <label htmlFor="nome">Nome completo</label>
@@ -158,7 +163,7 @@ export const ResetPassword: React.FC = () => {
                     </div>
 
                     <div className={styles.inputs}>
-                        <label htmlFor="confirmasenha">Confime sua nova senha</label>
+                        <label htmlFor="confirmasenha">Confirme sua nova senha</label>
                         <input required type="password" id="confirmasenha" placeholder='Confirme sua senha' className={styles.input} onBlur={(e) => {
                             validaInputs(e);
                         }} />
@@ -174,14 +179,15 @@ export const ResetPassword: React.FC = () => {
                         } />
                     </div>
 
-                    <Link className={styles.button} to={"/sucess-reset-password"} onClick={(e: any) => {
-                        if (formState.input1 == false || formState.input2 == false || formState.input3 == false || formState.input4 == false || formState.input5 == false) {
-                            e.preventDefault();
-                        }
-                    }}>
-                        <Button title="Redefinir" />
-                    </Link>
-
+                    <button className={styles.button} type="submit">
+                        Redefinir
+                    </button>
+                    
+                    <Modal 
+                    isOpen={open}
+                    title={'Senha redefinida com sucesso!'}
+                    description={'Você pode fazer login com sua nova senha.'}
+                    /> 
                 </form>
             </section>
         </div>

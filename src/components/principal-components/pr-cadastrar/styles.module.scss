@@ -58,7 +58,7 @@
                 font-size: 1rem;
                 position: absolute;
                 right: 22%;
-                top: 59%;
+                top: 55%;
                 z-index: 9999;
                 transition: 0.5s;
 
@@ -74,7 +74,7 @@
                 font-size: 1rem;
                 position: absolute;
                 right: 22%;
-                top: 76.5%;
+                top: 71.4%;
                 z-index: 9999;
                 transition: 0.5s;
 
@@ -151,23 +151,22 @@
             }
 
             .button {
-                width: 100%;
+                width: 50%;
                 text-decoration: none;
-
-                button {
-                    font-size: 0.9rem;
-                    font-weight: 700;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0.6rem auto;
-                    width: 60%;
-                    border: none;
-                    border-radius: 3rem;
-                    height: 2rem;
-                    transition: 0.5s;
-                    padding: 1.2rem;
-                }
+                background-color: var(--second-color);
+                font-size: 0.9rem;
+                font-weight: 700;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0.6rem auto;
+                width: 60%;
+                border: none;
+                border-radius: 3rem;
+                height: 2rem;
+                transition: 0.5s;
+                padding: 1.2rem;
+                color: var(--fourth-color);
             }
 
             button:hover {

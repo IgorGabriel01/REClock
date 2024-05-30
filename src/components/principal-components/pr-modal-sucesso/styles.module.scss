@@ -1,48 +1,60 @@
-.stmodal {
-    background-color: rgba($color: #000000, $alpha: 0.7);
-    position: absolute;
-    width: 100%;
-    height: 100vh;
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    height: 750px;
+    color: red;
+    flex-direction: column;
+
 
     .modal {
-        width: 40%;
-        height: 12rem;
+        background: white;
+        padding: 20px;
+        border-radius: 25px;
+        position: relative;
+        height: 210px;
+        width: 510px;
+        color: red;
+    }
+
+    button {
+        font-size: 0.9rem;
+        font-weight: 700;
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        gap: 1.5rem;
         align-items: center;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: var(--fourth-color);
-        border-radius: 1rem;
-        z-index: 9999;
-
-        p {
-            font-size: 1.2rem;
-            color: var(--third-color);
-            font-weight: 600;
-        }
-
-        .link {
-            width: 60%;
-        }
-
-        button {
-            border-radius: 1rem;
-            font-weight: 700;
-            border: none;
-            height: 2.2rem;
-            width: 100%;
-            transition: 0.5s;
-            cursor: pointer;
-        }
-
-        button:hover {
-            transition: 0.5s;
-            opacity: 0.8;
-        }
+        margin: 1rem auto;
+        width: 60%;
+        border: none;
+        border-radius: 3rem;
+        height: 2rem;
+        transition: 0.5s;
+        padding: 1.2rem;
+        background-color: var(--second-color);
     }
 }
+
+button:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+    .paragraph {
+        font-size: 20px;
+        color: var(--third-color);
+        margin-top: 3%;
+    }
+
+    .login {
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+    }

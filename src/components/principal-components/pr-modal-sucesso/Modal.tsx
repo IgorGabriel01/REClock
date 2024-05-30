@@ -1,23 +1,27 @@
-import { Button } from "../../sub-components/sb-button/Button";
-import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
-
-interface PropsModal {
+import styles from "./styles.module.scss";
+interface IModal {
+    isOpen: boolean;
     title: string;
-
+    description: string
+}
+export function Modal({isOpen, title, description}: IModal) {
+    if(isOpen) {
+          return (
+            <div className={styles.modalOverlay}>
+                <div className={styles.modal}>
+                    <div>
+                        <h1 className={styles.paragraph}>{title}</h1>
+                        <p className={styles.paragraph}>{description}</p>
+                        <button><Link to={"/login"} className={styles.login}>Fazer login</Link></button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+    else {
+        return <></>;
+    }
+      
 }
 
-export const Modal: React.FC<PropsModal> = (props) => {
-
-    document.title = 'REClock - Sucesso!';
-
-    return (
-        <div className={styles.stmodal}>
-            <section className={styles.modal}>
-                <p>{props.title} com sucesso!</p>
-                <p>Faça login para continuar</p>
-                <Link className={styles.link} to={"/login"}><Button title="Fazer login" /></Link>
-            </section>
-        </div>
-    )
-}
