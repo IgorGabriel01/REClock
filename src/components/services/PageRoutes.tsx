@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "../../principal-components/pr-home/Home";
-import { CreateAccount } from "../../principal-components/pr-cadastrar/CreateAccount";
-import { Login } from "../../principal-components/pr-login/Login";
-import { ResetPassword } from "../../principal-components/pr-esqueceu-senha/ResetPassword";
-import { Navigation } from "../../sub-components/sb-navigation-menu/Navigation";
+import { Home } from "../../pages/home/Home";
+import { Login } from "../../pages/login/Login";
+import { CreateAccount } from "../../pages/cadastrar/CreateAccount";
+import Navigation from "../navigation-menu/Navigation";
+import { ResetPassword } from "../../pages/esqueceu-senha/ResetPassword";
+
 
 function PagesRoutes() {
     return (

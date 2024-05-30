@@ -1,6 +1,5 @@
-import React from 'react';
-import Img from "../../../assets/img/logos/logo-reclock.png";
-import Icon from "../../../assets/img/icon.png";
+import Img from "../../assets/img/logos/logo-reclock.png";
+import Icon from "../../assets/img/icon.png";
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
@@ -8,8 +7,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LogoutIcon from '@mui/icons-material/Logout';
-import styles from "../sb-navigation-menu/styles.module.scss";
-import Mapa from "./Mapa";
+import styles from "./styles.module.scss";
+
+//import Mapa from "./Mapa";
 
 export const Navigation: React.FC = () => {
     return (
