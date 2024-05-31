@@ -36,75 +36,61 @@
         border-top-right-radius: 25px;
         height: 25.5%;
     }
-
-    .divInput {
-        background-color: white;
-        width: 100%;
-        padding: 20px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-    }
-
     .arrowicon {
-        cursor: pointer;
-        font-size: 30px;
+        font-size: 35px;
     }
     .arrowicon:hover {
         opacity: 0.7;
         transition: 0.5s;
-        cursor: pointer;
     }
 
     input {
         position: absolute;
         top: 23.5%;
-        left: 30%;
-        height: 42px;
-        width: 30%;
+        left: 31%;
+        height: 44px;
+        width: 32%;
         padding: 10px;
-        border-radius: 8px;
+        border-radius: 7px;
         border: 2px solid var(--third-color);
     }
 
     button {
         font-size: 0.9rem;
         position: absolute;
-        left: 60.5%;
+        left: 62.5%;
         top: 23.5%;
-        font-weight: 700;
+        font-weight: 500;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 110px;
+        width: 100px;
         border: none;
-        border-radius: 5px;
-        height: 2rem;
+        border-radius: 7px;
+        height: 1px;
         transition: 0.5s;
-        padding: 1.2rem;
+        padding: 1.3rem;
         background-color: var(--third-color);
         color: var(--fourth-color);
         cursor: pointer;
     }
 
     button:hover {
-        opacity: 0.7;
+        background-color: var(--second-color);
         transition: 0.5s;
     }
     h1 {
         margin-left: 35%;
+        font-size: 30px;
     }
 
     .tasks {
         display: flex;
         flex-direction: column;
+        margin-top: 15%;
         height: 58%;
         width: 90%;
-        gap: 5px;
+        gap: 3px;
         overflow-y: auto;
 
         .taskDetail {

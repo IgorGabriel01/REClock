@@ -19,10 +19,10 @@ export function ModalTask({ isOpen, onClose }: IModal) {
                     <h1>Minhas tarefas</h1>
                     <ForwardSharpIcon className={styles.arrowicon} onClick={onClose} />
                 </div>
-                <div className={styles.divInput}>
-                    <input type="text" placeholder="adicione uma nova tarefa" />
+               
+                    <input type="text" placeholder="Adicione uma nova tarefa" />
                     <button type="submit">Criar</button>
-                </div>
+              
                 <div className={styles.tasks}>
                     <div className={styles.taskDetail}>
                         <p>Testar e depurar código do projeto</p>
