@@ -47,7 +47,7 @@
     input {
         position: absolute;
         top: 23.5%;
-        left: 31%;
+        left: 32%;
         height: 44px;
         width: 32%;
         padding: 10px;
@@ -58,7 +58,7 @@
     button {
         font-size: 0.9rem;
         position: absolute;
-        left: 62.5%;
+        left: 63.7%;
         top: 23.5%;
         font-weight: 500;
         display: flex;
@@ -80,7 +80,7 @@
         transition: 0.5s;
     }
     h1 {
-        margin-left: 35%;
+        margin-left: 33%;
         font-size: 30px;
     }
 
@@ -98,9 +98,34 @@
             min-height: 13%;
             border-radius: 8px;
             color: black;
+            word-wrap: break-word;
+            hyphens: auto;
             padding: 18px;
             font-size: 14px;
             align-items: center;
+            display: flex;
+
+            position: relative;
+            
+            .deleteIcon {
+                color: var(--fourth-color);
+                position: absolute;
+                right: 10px; // Ajuste conforme necessário
+                top: 50%;
+                transform: translateY(-50%);
+                transition: 0.5s;
+            }
+
+            .deleteIcon:hover {
+                color: red;
+                opacity: 0.7;
+                transition: 0.5s;
+            }
+        }
+
+        .completed {
+            text-decoration: line-through; /* Risco no texto para indicar conclusão */
+            background-color: #d3d3d3; /* Cor diferente para indicar conclusão */
         }
     }
 } 

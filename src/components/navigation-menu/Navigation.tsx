@@ -12,6 +12,7 @@ import styles from "./styles.module.scss";
 import { useState } from "react";
 import { ModalTask } from "../../pages/modaltask/MotalTask";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import Mapa from "./Mapa";
 
 
 //import Mapa from "./Mapa";
@@ -65,6 +66,7 @@ export const Navigation: React.FC = () => {
                     <LogoutIcon className={styles.iconlogout} />
                 </div>
             </nav>
+           { /* <Mapa /> */}
         </div>
     );
 }
