@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    height: 750px;
-    color: red;
+    height: 100vh; // Ajustado para cobrir toda a altura da tela
+    width: 100vw; // Ajustado para cobrir toda a largura da tela
     flex-direction: column;
 
 
@@ -21,7 +21,6 @@
         position: relative;
         height: 210px;
         width: 510px;
-        color: red;
     }
 
     button {
@@ -58,3 +57,4 @@ button:hover {
         text-decoration: none;
         font-weight: 400;
     }
+

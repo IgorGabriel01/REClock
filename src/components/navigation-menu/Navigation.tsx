@@ -9,9 +9,15 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LogoutIcon from '@mui/icons-material/Logout';
 import styles from "./styles.module.scss";
 
+import { useState } from "react";
+import { ModalTask } from "../../pages/modaltask/MotalTask";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+
+
 //import Mapa from "./Mapa";
 
 export const Navigation: React.FC = () => {
+    const [open, setOpen] = useState<boolean>(false);
     return (
         <div className={styles.navigationContainer}>
             <nav className={styles.navigation}>
@@ -30,10 +36,16 @@ export const Navigation: React.FC = () => {
                     <p>Vamos começar</p>
                     <p>Criar ou adicionar novas tarefas não poderia ser mais fácil</p>
                     <div>
-                        <p>+</p>
-                        <p>Adicionar nova tarefa</p>
+                       <AddCircleOutlineIcon className={styles.add}/>
+                       <button className={styles.button} type="submit" onClick={() => setOpen(true)}> 
+                        Adicionar nova tarefa</button> 
+                      
                     </div>
-                </div>
+                    
+                </div> 
+                <ModalTask
+                isOpen={open} 
+                onClose={() => setOpen(false)}/>
                 <div className={styles.seconddivinfos}>
                     <ul>
                         <li> <NotificationsIcon /> Notificações</li>
