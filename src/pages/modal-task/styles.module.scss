@@ -10,14 +10,14 @@
     justify-content: center;
     z-index: 1000;
     height: 100vh;
-    width: 100vw; 
+    width: 100vw;
     flex-direction: column;
 
     .modalTask {
         background-color: var(--fourth-color);
         width: 45%;
         height: 95%;
-        border-radius: 25px; // Adicionando borda arredondada para um visual melhor
+        border-radius: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -36,9 +36,11 @@
         border-top-right-radius: 25px;
         height: 25.5%;
     }
+
     .arrowicon {
         font-size: 35px;
     }
+
     .arrowicon:hover {
         opacity: 0.7;
         transition: 0.5s;
@@ -47,7 +49,7 @@
     input {
         position: absolute;
         top: 23.5%;
-        left: 32%;
+        left: 31%;
         height: 44px;
         width: 32%;
         padding: 10px;
@@ -58,7 +60,7 @@
     button {
         font-size: 0.9rem;
         position: absolute;
-        left: 63.7%;
+        left: 62.5%;
         top: 23.5%;
         font-weight: 500;
         display: flex;
@@ -79,8 +81,9 @@
         background-color: var(--second-color);
         transition: 0.5s;
     }
+
     h1 {
-        margin-left: 33%;
+        margin-left: 35%;
         font-size: 30px;
     }
 
@@ -98,34 +101,46 @@
             min-height: 13%;
             border-radius: 8px;
             color: black;
-            word-wrap: break-word;
-            hyphens: auto;
             padding: 18px;
             font-size: 14px;
-            align-items: center;
             display: flex;
-
+            align-items: center;
+            justify-content: space-between;
             position: relative;
-            
-            .deleteIcon {
-                color: var(--fourth-color);
-                position: absolute;
-                right: 10px; // Ajuste conforme necessário
-                top: 50%;
-                transform: translateY(-50%);
-                transition: 0.5s;
-            }
-
-            .deleteIcon:hover {
-                color: red;
-                opacity: 0.7;
-                transition: 0.5s;
-            }
         }
 
         .completed {
-            text-decoration: line-through; /* Risco no texto para indicar conclusão */
-            background-color: #d3d3d3; /* Cor diferente para indicar conclusão */
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+
+        .checkIcon {
+            margin-right: 10px;
+            cursor: pointer;
+            color: #1E769A;
+            font-size: 20px;
+            font-weight: 200;
+        }
+
+        .deleteIcon {
+            color: var(--fourth-color);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .deleteIcon:hover {
+            color: red;
+            opacity: 0.7;
+            transition: 0.5s;
+            cursor: pointer;
+          }
+
+        .taskText {
+            flex-grow: 1;
+            margin-left: 10px;
+            margin-right: 10px;
+            word-break: break-word; 
+            font-size: 15px;
         }
     }
-} 
+}

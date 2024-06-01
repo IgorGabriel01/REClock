@@ -10,12 +10,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import styles from "./styles.module.scss";
 
 import { useState } from "react";
-import { ModalTask } from "../../pages/modaltask/MotalTask";
+import { ModalTask } from "../../pages/modal-task/MotalTask";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import Mapa from "./Mapa";
-
-
-//import Mapa from "./Mapa";
 
 export const Navigation: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -66,8 +62,9 @@ export const Navigation: React.FC = () => {
                     <LogoutIcon className={styles.iconlogout} />
                 </div>
             </nav>
-           { /* <Mapa /> */}
         </div>
+        
+        
     );
 }
 
