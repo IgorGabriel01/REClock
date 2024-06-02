@@ -22,6 +22,24 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
+
+        p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #6B6571;
+            font-weight: 500;
+            display: flex;
+        }
+        .completedCountMessage {
+            position: absolute;
+            top: 38.3%;
+            right: 28%;
+            font-size: 14px;
+            color: #6B6571;
+            font-weight: 600;
+        }
+
+     
     }
 
     .headerTask {
@@ -90,11 +108,15 @@
     .tasks {
         display: flex;
         flex-direction: column;
-        margin-top: 15%;
+        margin-top: 10%;
         height: 58%;
         width: 90%;
         gap: 3px;
         overflow-y: auto;
+
+        .messageTask {
+            font-weight: 600;
+        }
 
         .taskDetail {
             background-color: #68B5CE;
@@ -113,6 +135,8 @@
             text-decoration: line-through;
             opacity: 0.8;
         }
+
+        
 
         .checkIcon {
             margin-right: 10px;

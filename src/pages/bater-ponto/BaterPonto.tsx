@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import styles from "./styles.module.scss";
+import Mapa from "../../services/api-maps/Mapa";
 
 export const BaterPonto: React.FC = ()=>{
 
@@ -42,7 +43,7 @@ export const BaterPonto: React.FC = ()=>{
                 </div>  
             </header>
             <main>
-                Map Content
+                <Mapa/>
             </main>
             <div className={styles.dinfos}>
                 <div className={styles.infos}>

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
-  height: '400px' 
+  height: '85vh' 
 };
 
 interface Position {
@@ -18,6 +18,8 @@ const Mapa = () =>  {
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyBdpvtKUZsRuhSOqXHgX64BthyKMOBNjo0" 
   });
+
+
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -49,7 +51,7 @@ const Mapa = () =>  {
             center={position}
             zoom={17}
           >
-            <Marker position={position} />
+            
           </GoogleMap>
         ) : (
           <div>Loading...</div>
@@ -59,15 +61,3 @@ const Mapa = () =>  {
 }
 
 export default Mapa;
-
-/*<div className={styles.divMap}>
-    <h1>Meus pontos</h1>
-    <Mapa />
-  </div> 
-            .divMap {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    background-color: red;
-    width: 80%;
-  }*/

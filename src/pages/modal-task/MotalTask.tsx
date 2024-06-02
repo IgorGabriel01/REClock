@@ -2,11 +2,12 @@ import ForwardSharpIcon from '@mui/icons-material/ForwardSharp';
 import DeleteIcon from '@mui/icons-material/Delete';
 import RadioButtonUncheckedOutlinedIcon from '@mui/icons-material/RadioButtonUncheckedOutlined';
 import styles from './styles.module.scss';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 
 interface IModal {
     isOpen: boolean;
     onClose: () => void;
+    onTaskAdded: (taskCount: number) => void;
 }
 
 interface Todo {
@@ -14,16 +15,32 @@ interface Todo {
     completed: boolean;
 }
 
-export function ModalTask({ isOpen, onClose }: IModal) {
+export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
     const [task, setTask] = useState('');
     const [todoList, setTodoList] = useState<Todo[]>([]);
+    const [taskCountMessage, setTaskCountMessage] = useState('');
+    const [completedCount, setCompletedCount] = useState(0)
+    const [message, setMessage] = useState('Adicionar uma nova tarefa');
+
+    useEffect(() => {
+        if (todoList.length > 0) {
+            setMessage(`Tarefas criadas: ${todoList.length}`);
+        } else {
+            setMessage('Suas tarefas aparecerão abaixo.');
+        }
+
+        const completedTasks = todoList.filter(todo => todo.completed).length;
+        setCompletedCount(completedTasks);
+        onTaskAdded(todoList.length);
+    }, [todoList, onTaskAdded]);
+
+    
 
     function handlerAddTodoList(event: FormEvent) {
         event.preventDefault();
         if (task === '') return;
 
         setTodoList((oldTodoList) => [...oldTodoList, { text: task, completed: false }]);
-
         setTask('');
     }
 
@@ -50,6 +67,7 @@ export function ModalTask({ isOpen, onClose }: IModal) {
                     <h1>Minhas tarefas</h1>
                     <ForwardSharpIcon className={styles.arrowicon} onClick={onClose} />
                 </div>
+
                 <input
                     type="text"
                     placeholder="Adicione uma nova tarefa"
@@ -58,6 +76,8 @@ export function ModalTask({ isOpen, onClose }: IModal) {
                 />
                 <button type="submit">Criar</button>
                 <div className={styles.tasks}>
+                    <p className={styles.messageTask}>{message}</p>
+                    
                     {todoList.map((todo, index) => (
                         <div
                             key={index}
@@ -65,10 +85,10 @@ export function ModalTask({ isOpen, onClose }: IModal) {
                         >
                             <RadioButtonUncheckedOutlinedIcon
                                 className={styles.checkIcon}
+                                fontSize="small" // Ajusta o tamanho do ícone
                                 onClick={() => toggleTodoCompleted(index)}
                             />
-                            <span className={styles.taskText} 
-                            onClick={() => toggleTodoCompleted(index)}>
+                            <span className={styles.taskText} onClick={() => toggleTodoCompleted(index)}>
                                 {todo.text}
                             </span>
                             <DeleteIcon
@@ -78,6 +98,8 @@ export function ModalTask({ isOpen, onClose }: IModal) {
                         </div>
                     ))}
                 </div>
+                <div className={styles.completedCountMessage}>Concluídas: {completedCount}</div>
+                
             </form>
         </div>
     );
