@@ -3,6 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import RadioButtonUncheckedOutlinedIcon from '@mui/icons-material/RadioButtonUncheckedOutlined';
 import styles from './styles.module.scss';
 import { FormEvent, useState, useEffect } from 'react';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 
 interface IModal {
     isOpen: boolean;
@@ -74,7 +75,7 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
                     value={task}
                     onChange={(event) => setTask(event.target.value)}
                 />
-                <button type="submit">Criar</button>
+                <button type="submit">Criar<AddCircleOutlineOutlinedIcon className={styles.add}/> </button>
                 <div className={styles.tasks}>
                     <p className={styles.messageTask}>{message}</p>
                     

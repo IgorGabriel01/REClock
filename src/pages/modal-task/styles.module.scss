@@ -26,7 +26,7 @@
         p {
             margin-bottom: 10px;
             font-size: 14px;
-            color: #6B6571;
+            color: var(--sixth-color);
             font-weight: 500;
             display: flex;
         }
@@ -35,7 +35,7 @@
             top: 37.3%;
             right: 28%;
             font-size: 14px;
-            color: #6B6571;
+            color:var(--sixth-color);
             font-weight: 600;
         }
 
@@ -47,7 +47,7 @@
         justify-content: space-between;
         align-items: center;
         background-color: var(--third-color);
-        color: white;
+        color: var(--fourth-color);
         width: 100%;
         padding: 10px 20px;
         border-top-left-radius: 25px;
@@ -57,6 +57,7 @@
 
     .arrowicon {
         font-size: 35px;
+        margin-bottom: 4%;
     }
 
     .arrowicon:hover {
@@ -66,33 +67,38 @@
 
     input {
         position: absolute;
-        top: 22.5%;
-        left: 28.5%;
+        top: 22.9%;
+        left: 29.2%;
         height: 46px;
-        width: 37%;
+        width: 36.8%;
         padding: 10px;
         border-radius: 7px;
-        border: 2px solid var(--third-color);
+        border: solid 2px  var(--third-color);
     }
 
     button {
         font-size: 0.9rem;
         position: absolute;
-        left: 64.9%;
-        top: 22.9%;
+        left: 65.4%;
+        top: 23.2%;
         font-weight: 500;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100px;
         border: none;
-        border-radius: 7px;
+        border-radius: 5px;
         height: 1px;
         transition: 0.5s;
         padding: 1.3rem;
         background-color: var(--third-color);
         color: var(--fourth-color);
         cursor: pointer;
+
+        .add {
+            font-size: 20px;
+            margin-left: 10%;
+        }
     }
 
     button:hover {
@@ -103,6 +109,7 @@
     h1 {
         margin-left: 33%;
         font-size: 33px;
+        margin-bottom: 4%;
     }
 
     .tasks {
@@ -110,9 +117,10 @@
         flex-direction: column;
         margin-top: 10%;
         height: 58%;
-        width: 90%;
+        width: 88%;
         gap: 3px;
         overflow-y: auto;
+        
 
         .messageTask {
             font-weight: 600;
@@ -129,6 +137,7 @@
             align-items: center;
             justify-content: space-between;
             position: relative;
+            border: solid 2px var(--third-color);
         }
 
         .completed {
@@ -141,7 +150,7 @@
         .checkIcon {
             margin-right: 10px;
             cursor: pointer;
-            color: #1E769A;
+            color: var(--third-color);
             font-size: 20px;
             font-weight: 200;
         }
