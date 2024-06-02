@@ -6,6 +6,7 @@ import { ResetPassword } from "../pages/esqueceu-senha/ResetPassword";
 import { Navigation } from "../components/navigation-menu/Navigation";
 import { Sobre } from "../pages/sobre/Sobre";
 import { TermosPrivacidade } from "../pages/termos-privacidade/TermosPrivacidade";
+import { BaterPonto } from "../pages/bater-ponto/BaterPonto";
 
 function PagesRoutes() {
     return (
@@ -17,6 +18,7 @@ function PagesRoutes() {
             <Route path="/navigation" element={<Navigation />} />
             <Route path="/termos-privacidade" element={<TermosPrivacidade />} />
             <Route path="/sobre" element={<Sobre />} />
+            <Route path="/bater-ponto" element={<BaterPonto />} />
         </Routes>
     );
 }

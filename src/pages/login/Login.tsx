@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button } from "../../components/button/Button";
 import styles from "./styles.module.scss";
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { DadosContext } from '../../services/ContextProvider';
 import { Link } from "react-router-dom";
 import { Aside } from "../../components/aside-log/Aside";
 
 export const Login: React.FC = () => {
+
+    const dadosUsuarios = useContext(DadosContext);
 
     document.title = 'REClock - Login'
 
@@ -48,13 +51,10 @@ export const Login: React.FC = () => {
         eventElement.target.nextElementSibling.classList.add(styles.span);
     }
 
-    let matricula: string = '123123';
-    let senha: string = 'Sidi123';
-
     function validaInputs(eventElement: any) {
         switch (eventElement.target.id) {
             case "matricula":
-                if (eventElement.target.value !== matricula) {
+                if (eventElement.target.value !== dadosUsuarios.userData.matricula) {
                     entradaValueEventOne(eventElement, 'Matrícula incorreta');
                     setFormState({ ...formState, input1: false });
                 } else {
@@ -63,7 +63,7 @@ export const Login: React.FC = () => {
                 }
                 break;
             case "senha":
-                if (eventElement.target.value !== senha) {
+                if (eventElement.target.value !== dadosUsuarios.userData.senha) {
                     entradaValueEventOne(eventElement, 'Senha incorreta');
                     setFormState({ ...formState, input2: false });
                 } else {
@@ -123,7 +123,7 @@ export const Login: React.FC = () => {
                         <p><Link className={styles.firstlink} to={"/reset-password"}> Esqueceu a senha?</Link></p>
                     </div>
 
-                    <Link className={styles.button} to={"/navigation"} onClick={(e) => {
+                    <Link className={styles.button} to={"/bater-ponto"} onClick={(e) => {
                         const checkbox = document.getElementById('check') as HTMLInputElement;
                         const matriculaElement = document.getElementById('matricula') as HTMLInputElement;
                         const senhaElement = document.getElementById('senha') as HTMLInputElement;

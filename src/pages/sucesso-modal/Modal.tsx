@@ -5,6 +5,7 @@ interface IModal {
     title: string;
     description: string
 }
+
 export function Modal({isOpen, title, description}: IModal) {
     if(isOpen) {
           return (

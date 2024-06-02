@@ -9,10 +9,9 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    height: 100vh; // Ajustado para cobrir toda a altura da tela
-    width: 100vw; // Ajustado para cobrir toda a largura da tela
+    color: red;
     flex-direction: column;
-
+    text-align: center;
 
     .modal {
         background: white;
@@ -21,6 +20,14 @@
         position: relative;
         height: 210px;
         width: 510px;
+        color: red;
+
+        div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     }
 
     button {
