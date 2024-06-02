@@ -13,6 +13,7 @@ import { ModificarPerfil } from "../../components/modificar-pefil/ModificarPerfi
 import { useContext, useEffect, useState } from "react";
 import { DadosContext } from "../../services/ContextProvider";
 import { ModalTask } from "../../pages/modal-task/MotalTask";
+import { Link } from "react-router-dom";
 
 export const Navigation: React.FC = () => {
 
@@ -38,7 +39,7 @@ export const Navigation: React.FC = () => {
             setMessage(`Você tem ${count} tarefas criadas.`);
         }
          else {
-            setMessage('Adicionar uma nova tarefa');
+            setMessage('Adicione uma nova tarefa');
         }
     };
 
@@ -96,7 +97,9 @@ export const Navigation: React.FC = () => {
                             <p id="cargonavigation">{parsedData.cargo}</p>
                         </div>
                     </div>
-                    <LogoutIcon className={styles.iconlogout}/>
+                    <Link to={"/"}>
+                        <LogoutIcon className={styles.iconlogout}/>
+                    </Link>
                 </div>
             </nav>
             
