@@ -15,7 +15,7 @@
 
     .modalTask {
         background-color: var(--fourth-color);
-        width: 45%;
+        width: 56%; 
         height: 95%;
         border-radius: 25px;
         display: flex;
@@ -48,10 +48,10 @@
 
     input {
         position: absolute;
-        top: 23.5%;
-        left: 31%;
-        height: 44px;
-        width: 32%;
+        top: 22.5%;
+        left: 26%;
+        height: 46px;
+        width: 37%;
         padding: 10px;
         border-radius: 7px;
         border: 2px solid var(--third-color);
@@ -61,7 +61,7 @@
         font-size: 0.9rem;
         position: absolute;
         left: 62.5%;
-        top: 23.5%;
+        top: 22.9%;
         font-weight: 500;
         display: flex;
         justify-content: center;
@@ -83,8 +83,8 @@
     }
 
     h1 {
-        margin-left: 35%;
-        font-size: 30px;
+        margin-left: 33%;
+        font-size: 35px;
     }
 
     .tasks {
@@ -124,18 +124,16 @@
 
         .deleteIcon {
             color: var(--fourth-color);
-            transition: 0.5s;
+            transition: 0.2s;
             cursor: pointer;
         }
 
         .deleteIcon:hover {
             color: red;
-            opacity: 0.7;
-            transition: 0.5s;
             cursor: pointer;
           }
 
-        .taskText {
+        .taskText {  
             flex-grow: 1;
             margin-left: 10px;
             margin-right: 10px;
