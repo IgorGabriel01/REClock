@@ -15,7 +15,7 @@
 
     .modalTask {
         background-color: var(--fourth-color);
-        width: 56%; 
+        width: 50%; 
         height: 95%;
         border-radius: 25px;
         display: flex;
@@ -32,7 +32,7 @@
         }
         .completedCountMessage {
             position: absolute;
-            top: 38.3%;
+            top: 37.3%;
             right: 28%;
             font-size: 14px;
             color: #6B6571;
@@ -67,7 +67,7 @@
     input {
         position: absolute;
         top: 22.5%;
-        left: 26%;
+        left: 28.5%;
         height: 46px;
         width: 37%;
         padding: 10px;
@@ -78,7 +78,7 @@
     button {
         font-size: 0.9rem;
         position: absolute;
-        left: 62.5%;
+        left: 64.9%;
         top: 22.9%;
         font-weight: 500;
         display: flex;
@@ -102,7 +102,7 @@
 
     h1 {
         margin-left: 33%;
-        font-size: 35px;
+        font-size: 33px;
     }
 
     .tasks {
