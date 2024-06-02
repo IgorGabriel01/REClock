@@ -24,6 +24,8 @@ export const Navigation: React.FC = () => {
     const data = localStorage.getItem('savedata') as string;
     const parsedData = JSON.parse(data);
 
+    const [open, setOpen] = useState<boolean>(false);
+
     return (
         <div className={styles.navigationContainer}>
             <nav className={styles.navigation}>
@@ -42,10 +44,16 @@ export const Navigation: React.FC = () => {
                     <p>Vamos começar</p>
                     <p>Criar ou adicionar novas tarefas não poderia ser mais fácil</p>
                     <div>
-                        <p>+</p>
-                        <p>Adicionar nova tarefa</p>
+                       <AddCircleOutlineIcon className={styles.add}/>
+                       <button className={styles.button} type="submit" onClick={() => setOpen(true)}> 
+                        Adicionar nova tarefa</button> 
+                      
                     </div>
-                </div>
+                    
+                </div> 
+                <ModalTask
+                isOpen={open} 
+                onClose={() => setOpen(false)}/>
                 <div className={styles.seconddivinfos}>
                     <ul>
                         <li> <NotificationsIcon /> Notificações</li>

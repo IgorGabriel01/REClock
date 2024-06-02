@@ -41,7 +41,7 @@ const Mapa = () =>  {
   }, []);
 
   return (
-    <div className="div-map">
+    
       <div className="map-container">
         {isLoaded && position ? (
           <GoogleMap
@@ -55,8 +55,19 @@ const Mapa = () =>  {
           <div>Loading...</div>
         )}
       </div>
-    </div>
   );
 }
 
 export default Mapa;
+
+/*<div className={styles.divMap}>
+    <h1>Meus pontos</h1>
+    <Mapa />
+  </div> 
+            .divMap {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    background-color: red;
+    width: 80%;
+  }*/
