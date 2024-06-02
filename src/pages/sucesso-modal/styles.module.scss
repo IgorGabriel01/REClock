@@ -9,10 +9,9 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    height: 750px;
     color: red;
     flex-direction: column;
-
+    text-align: center;
 
     .modal {
         background: white;
@@ -22,6 +21,13 @@
         height: 210px;
         width: 510px;
         color: red;
+
+        div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     }
 
     button {

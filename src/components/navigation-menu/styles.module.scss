@@ -1,13 +1,11 @@
-
-  
-  .navigation {
+.navigation {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
     gap: 1.6rem;
     padding: 1.5rem 1rem;
-    width: 20%; /* Ajuste conforme necessário */
+    width: 20%;
     background-color: var(--third-color);
     color: var(--fourth-color);
   
@@ -35,11 +33,11 @@
         list-style: none;
   
         li {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          opacity: 0.9;
+          opacity: 0.8;
           cursor: pointer;
           transition: 0.5s;
         }
@@ -120,8 +118,8 @@
         list-style: none;
   
         li {
-          opacity: 0.9;
-          font-size: 0.9rem;
+          opacity: 0.8;
+          font-size: 0.8rem;
           display: flex;
           align-items: center;
           gap: 0.5rem;
@@ -139,44 +137,52 @@
     .infos {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       background-color: var(--second-color);
       font-size: 0.8rem;
-      padding: 1rem 0.5rem;
+      padding: 1rem;
       border-radius: 1rem;
       opacity: 0.9;
       transition: 0.5s;
+      text-decoration: none;
   
       img {
         width: 2.5rem;
+        border-radius: 10rem;
       }
   
-      div {
+      .infosi {
         display: flex;
         flex-direction: column;
-        gap: 0.3rem;
+        align-items: center;
+        gap: 0.8rem;
   
         p {
+          font-size: 0.65rem;
           font-weight: 700;
+          text-align: center;
+          color: var(--fourth-color);
         }
   
         div {
           display: flex;
-          flex-direction: row;
-  
+          gap: 0.3rem;
+          
           p {
             font-size: 0.6rem;
+            text-decoration: none;
           }
         }
       }
   
       .iconlogout {
-        transition: 0.5s;
+        transition: 0.8s;
+        color: var(--fourth-color);
       }
   
       .iconlogout:hover {
         color: var(--third-color);
-        transition: 0.5s;
+        transition: 0.8s;
       }
     }
   }

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from "./styles.module.scss";
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Aside } from '../../components/aside-log/Aside';
+import { DadosContext } from '../../services/ContextProvider';
 import { Modal } from '../sucesso-modal/Modal';
 
-
 export const ResetPassword: React.FC = () => {
+
+    const dadosUsuarios = useContext(DadosContext);
 
     document.title = 'REClock - Redefinir senha';
 
@@ -51,8 +53,8 @@ export const ResetPassword: React.FC = () => {
     function validaInputs(eventElement: any) {
         switch (eventElement.target.id) {
             case "nome":
-                if (eventElement.target.value.length <= 10) {
-                    entradaValueEventOne(eventElement, 'Nome precisa ter pelo menos 10 caracteres');
+                if (eventElement.target.value !== dadosUsuarios.userData.nome) {
+                    entradaValueEventOne(eventElement, 'Nome não encontrado');
                     setFormState({ ...formState, input1: false });
                 } else {
                     entradaValueEventTwo(eventElement);
@@ -60,8 +62,8 @@ export const ResetPassword: React.FC = () => {
                 }
                 break;
             case "matricula":
-                if (eventElement.target.value.length <= 6) {
-                    entradaValueEventOne(eventElement, 'Sua matrícula precisa ter 6 números');
+                if (eventElement.target.value !== dadosUsuarios.userData.matricula) {
+                    entradaValueEventOne(eventElement, 'Matricula não encontrada');
                     setFormState({ ...formState, input2: false });
                 } else {
                     entradaValueEventTwo(eventElement);
@@ -69,8 +71,8 @@ export const ResetPassword: React.FC = () => {
                 }
                 break;
             case "email":
-                if (!eventElement.target.value.includes("@") || !eventElement.target.value.includes(".com")) {
-                    entradaValueEventOne(eventElement, 'Digite um e-mail válido');
+                if ((!eventElement.target.value.includes("@") || !eventElement.target.value.includes(".com")) || eventElement.target.value !== dadosUsuarios.userData.email) {
+                    entradaValueEventOne(eventElement, 'E-mail inválido ou não encontrado');
                     setFormState({ ...formState, input3: false });
                 } else {
                     entradaValueEventTwo(eventElement)
@@ -85,7 +87,6 @@ export const ResetPassword: React.FC = () => {
                     entradaValueEventTwo(eventElement);
 
                     setFormState({ ...formState, input4: true });
-                    setSenhaState(eventElement.target.value);
                 }
                 break;
             case "confirmasenha":
@@ -95,6 +96,7 @@ export const ResetPassword: React.FC = () => {
                 } else {
                     entradaValueEventTwo(eventElement);
                     setFormState({ ...formState, input5: true });
+                    setSenhaState(eventElement.target.value);
                 }
                 break
             default:

@@ -2,12 +2,17 @@ import styles from "./styles.module.scss";
 import { Aside } from "../../components/aside-log/Aside";
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useState } from 'react';
+import { useState, useContext} from 'react';
+import { DadosContext } from '../../services/ContextProvider'
 import { Modal } from '../sucesso-modal/Modal';
+import { Link } from "react-router-dom";
 
 export const CreateAccount: React.FC = () => {
 
     document.title = 'REClock - Criar Conta';
+
+    const dadosUsuarios = useContext(DadosContext);
+    const {userData, setUserData} = dadosUsuarios;
 
     const [formState, setFormState] = useState({
         input1: false,
@@ -15,10 +20,11 @@ export const CreateAccount: React.FC = () => {
         input3: false,
         input4: false,
         input5: false
-    });
+    })
+
+    const [senha, setSenha] = useState() as any;
 
     const [open, setOpen] = useState<boolean>(false); //aqui é pra ele setar quando aparecer
-    const [senhaState, setSenhaState] = useState(" ");
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -56,15 +62,19 @@ export const CreateAccount: React.FC = () => {
                 } else {
                     entradaValueEventTwo(eventElement);
                     setFormState({ ...formState, input1: true });
+
+                    setUserData({...userData, nome: eventElement.target.value});
                 }
                 break;
             case "matricula":
-                if (eventElement.target.value.length <= 6) {
+                if (eventElement.target.value.length < 6) {
                     entradaValueEventOne(eventElement, 'Sua matrícula precisa ter 6 números');
                     setFormState({ ...formState, input2: false });
                 } else {
                     entradaValueEventTwo(eventElement);
                     setFormState({ ...formState, input2: true });
+
+                    setUserData({...userData, matricula: eventElement.target.value});
                 }
                 break;
             case "email":
@@ -74,25 +84,29 @@ export const CreateAccount: React.FC = () => {
                 } else {
                     entradaValueEventTwo(eventElement);
                     setFormState({ ...formState, input3: true });
+
+                    setUserData({...userData, email: eventElement.target.value});
                 }
                 break;
             case "senha":
-                if (eventElement.target.value.length <= 6) {
+                if (eventElement.target.value.length < 6) {
                     entradaValueEventOne(eventElement, 'A senha precisa ter mais que 6 caracteres');
                     setFormState({ ...formState, input4: false });
                 } else {
                     entradaValueEventTwo(eventElement);
                     setFormState({ ...formState, input4: true });
-                    setSenhaState(eventElement.target.value);
+                    setSenha(eventElement.target.value);
                 }
                 break;
             case "confirmasenha":
-                if (eventElement.target.value !== senhaState) {
+                if (eventElement.target.value !== senha) {
                     entradaValueEventOne(eventElement, 'As senhas precisam ser iguais');
                     setFormState({ ...formState, input5: false });
                 } else {
                     entradaValueEventTwo(eventElement);
                     setFormState({ ...formState, input5: true });
+
+                    setUserData({...userData, senha: senha});
                 }
                 break;
             default:
@@ -155,15 +169,46 @@ export const CreateAccount: React.FC = () => {
                         }} />
                     </div>
 
-                    <button className={styles.button} type="submit">
+                    <button className={styles.button} type='submit' onClick={()=>{
+                        let validaCargo: string = '';
+                        let cargo: string = '';
+                        let percorrer = userData.matricula as string;
+    
+                        for (let i = 0; i < percorrer.length - 3; i++) {
+                           validaCargo = validaCargo + percorrer[i];
+                        }
+                        
+                        switch (validaCargo) {
+                            case '123':
+                                cargo = 'Dev. Front-End'
+                                break;
+                            case '321':
+                                cargo = 'Dev. Back-End'
+                                break;
+                            case '875':
+                                cargo = 'Gestor'
+                                break;
+                            case '432':
+                                cargo = 'Recursos Humanos'
+                                break;
+                            case '532':
+                                cargo = 'Scrum Master'
+                                break;
+                            default:
+                                break;
+                        }
+                        userData.cargo = cargo;
+
+                        localStorage.setItem('savedata', JSON.stringify(userData));
+                    }}>
                         Cadastrar
                     </button>
                     <Modal 
                     isOpen={open}
                     title={'Conta criada com sucesso!'}
                     description={'Faça login para continuar'}
-                    /> {/*Aqui ele chama o modal caso o formulario seja validado */} 
-                    <p className={styles.ftext}>Ao clicar em cadastra-se, você concorda com nossos<br></br> <span>termos de serviço e política de privacidade</span></p>
+                    />
+                    <p className={styles.ftext}>Ao clicar em cadastra-se, você concorda com nossos <Link to={'/termos-privacidade'}><span> termos de serviço e política de privacidade</span></Link></p>
                 </form>
             </section>
         </div>
