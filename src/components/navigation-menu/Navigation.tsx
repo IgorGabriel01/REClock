@@ -6,13 +6,14 @@ import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import styles from "./styles.module.scss";
 import { ModificarPerfil } from "../../components/modificar-pefil/ModificarPerfil";
 import { useContext, useEffect, useState } from "react";
 import { DadosContext } from "../../services/ContextProvider";
 import { ModalTask } from "../../pages/modal-task/MotalTask";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { Link } from "react-router-dom";
 
 export const Navigation: React.FC = () => {
 
@@ -27,6 +28,20 @@ export const Navigation: React.FC = () => {
     const parsedData = JSON.parse(data);
 
     const [open, setOpen] = useState<boolean>(false);
+    const [taskCount, setTaskCount] = useState<number>(0);
+    const [message, setMessage] = useState('Adicionar uma nova tarefa');
+
+    const handleTaskAdded = (count: number) => {
+        setTaskCount(count);
+        if (count === 1) {
+            setMessage(`Você tem ${count} tarefa criada`);
+        } else if(count > 1) {
+            setMessage(`Você tem ${count} tarefas criadas`);
+        }
+         else {
+            setMessage('Adicione uma nova tarefa');
+        }
+    };
 
     return (
         <div className={styles.navigationContainer}>
@@ -46,16 +61,16 @@ export const Navigation: React.FC = () => {
                     <p>Vamos começar</p>
                     <p>Criar ou adicionar novas tarefas não poderia ser mais fácil</p>
                     <div>
-                       <AddCircleOutlineIcon className={styles.add}/>
+                       <AddTaskOutlinedIcon className={styles.add}/>
                        <button className={styles.button} type="submit" onClick={() => setOpen(true)}> 
-                        Adicionar nova tarefa</button> 
-                      
+                       {message}</button> 
                     </div>
                     
                 </div> 
                 <ModalTask
                 isOpen={open} 
-                onClose={() => setOpen(false)}/>
+                onClose={() => setOpen(false)}
+                onTaskAdded={handleTaskAdded}/>
                 <div className={styles.seconddivinfos}>
                     <ul>
                         <li> <NotificationsIcon /> Notificações</li>
@@ -82,7 +97,9 @@ export const Navigation: React.FC = () => {
                             <p id="cargonavigation">{parsedData.cargo}</p>
                         </div>
                     </div>
-                    <LogoutIcon className={styles.iconlogout}/>
+                    <Link to={"/"}>
+                        <LogoutIcon className={styles.iconlogout}/>
+                    </Link>
                 </div>
             </nav>
             

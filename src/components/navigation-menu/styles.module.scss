@@ -86,7 +86,34 @@
         color: var(--third-color);
         background-color: var(--fourth-color);
         font-weight: 500;
+        border-radius: 8px;
+        
+        button {
+          background-color: var(--fourth-color);
+          height: 30px;
+          border: none;
+          color: var(--third-color);
+          font-weight: 600;
+          transition: 0.5s;
+        }
+        button:hover {
+          opacity: 0.7;
+          transition: 0.5s;
+          cursor: pointer;
+      }
+
+      .add {
+        font-size: 20px;
+        margin-right: 4%;
+        transition: 0.5s;
+      }
   
+      .add:hover {
+        opacity: 0.7;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
         p:first-child {
           font-size: 2rem;
           font-weight: 500;
@@ -184,6 +211,8 @@
         color: var(--third-color);
         transition: 0.8s;
       }
+
+      
     }
   }
   
