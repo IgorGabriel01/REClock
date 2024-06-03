@@ -9,8 +9,10 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LogoutIcon from '@mui/icons-material/Logout';
 import styles from "./styles.module.scss";
 import { ModificarPerfil } from "../../components/modificar-pefil/ModificarPerfil";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DadosContext } from "../../services/ContextProvider";
+import { ModalTask } from "../../pages/modal-task/MotalTask";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 export const Navigation: React.FC = () => {
 

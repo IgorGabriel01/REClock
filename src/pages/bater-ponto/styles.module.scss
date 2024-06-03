@@ -103,21 +103,22 @@
             }
         }
 
-        button {
+        .secondlink {
             width: 45%;
             text-decoration: none;
-            border: none;
-            background-color: var(--second-color);
-            padding: 0.8rem;
-            font-weight: 550;
-            font-size: 1.2rem;
-            border-radius: 0.5rem;
-            transition: 0.5s;
 
-            .secondlink {
+            button {
+                width: 100%;
                 text-decoration: none;
+                border: none;
+                background-color: var(--second-color);
+                padding: 0.8rem;
+                font-weight: 550;
+                font-size: 1.2rem;
+                border-radius: 0.5rem;
+                transition: 0.5s;
                 color: var(--fourth-color);
             }
-        }
+        }   
     }
 }

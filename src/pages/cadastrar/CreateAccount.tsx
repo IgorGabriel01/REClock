@@ -171,7 +171,6 @@ export const CreateAccount: React.FC = () => {
 
                     <button className={styles.button} type='submit' onClick={()=>{
                         let validaCargo: string = '';
-                        let cargo: string = '';
                         let percorrer = userData.matricula as string;
     
                         for (let i = 0; i < percorrer.length - 3; i++) {
@@ -180,24 +179,115 @@ export const CreateAccount: React.FC = () => {
                         
                         switch (validaCargo) {
                             case '123':
-                                cargo = 'Dev. Front-End'
+                                userData.cargo = 'Dev. Front-End';
+                                userData.inicioEscala = {
+                                    hora: 8,
+                                    minutos: 15
+                                };
+                                userData.intervalo = {
+                                    hora: 12,
+                                    minutos: 0
+                                };
+                                userData.fimExpediente = {
+                                    hora: 17,
+                                    minutos: 30
+                                };
                                 break;
                             case '321':
-                                cargo = 'Dev. Back-End'
+                                userData.cargo = 'Dev. Back-End';
+                                userData.inicioEscala = {
+                                    hora: 8,
+                                    minutos: 30
+                                };
+                                userData.intervalo = {
+                                    hora: 12,
+                                    minutos: 15
+                                };
+                                userData.fimExpediente = {
+                                    hora: 17,
+                                    minutos: 45
+                                };
                                 break;
                             case '875':
-                                cargo = 'Gestor'
+                                userData.cargo = 'Gestor';
+                                userData.inicioEscala = {
+                                    hora: 12,
+                                    minutos: 15
+                                };
+                                userData.intervalo = {
+                                    hora: 16,
+                                    minutos: 30
+                                };
+                                userData.fimExpediente = {
+                                    hora: 20,
+                                    minutos: 30
+                                };
                                 break;
                             case '432':
-                                cargo = 'Recursos Humanos'
+                                userData.cargo = 'Recursos Humanos';
+                                userData.inicioEscala = {
+                                    hora: 11,
+                                    minutos: 20
+                                };
+                                userData.intervalo = {
+                                    hora: 16,
+                                    minutos: 30
+                                };
+                                userData.fimExpediente = {
+                                    hora: 19,
+                                    minutos: 30
+                                };
                                 break;
                             case '532':
-                                cargo = 'Scrum Master'
+                                userData.cargo = 'Scrum Master';
+                                userData.inicioEscala = {
+                                    hora: 8,
+                                    minutos: 0
+                                }
+                                userData.intervalo = {
+                                    hora: 11,
+                                    minutos: 30
+                                }
+                                userData.fimExpediente = {
+                                    hora: 16,
+                                    minutos: 30
+                                };
+                                break;
+                            case '987':
+                                userData.cargo = 'Segurança';
+                                userData.inicioEscala = {
+                                    hora: 19,
+                                    minutos: 30
+                                }
+                                userData.intervalo = {
+                                    hora: 2,
+                                    minutos: 30
+                                }
+                                userData.fimExpediente = {
+                                    hora: 4,
+                                    minutos: 30
+                                };
+                                break;
+                            case '872':
+                                userData.cargo = 'Serviços gerais';
+                                userData.inicioEscala = {
+                                    hora: 19,
+                                    minutos: 30
+                                }
+                                userData.intervalo = {
+                                    hora: 2,
+                                    minutos: 30
+                                }
+                                userData.fimExpediente = {
+                                    hora: 4,
+                                    minutos: 30
+                                };
                                 break;
                             default:
                                 break;
                         }
-                        userData.cargo = cargo;
+
+                        userData.pontoBatido = false;
 
                         localStorage.setItem('savedata', JSON.stringify(userData));
                     }}>
