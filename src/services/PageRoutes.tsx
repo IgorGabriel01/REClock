@@ -6,7 +6,9 @@ import { ResetPassword } from "../pages/esqueceu-senha/ResetPassword";
 import { PrincipalHome } from "../pages/principal-home/PrincipalHome";
 import { Sobre } from "../pages/sobre/Sobre";
 import { TermosPrivacidade } from "../pages/termos-privacidade/TermosPrivacidade";
+import { AjustarPonto } from "../pages/ajustar-ponto/AjustarPonto";
 import { BaterPonto } from "../pages/bater-ponto/BaterPonto";
+import { AjustarPontoJustificativa } from "../pages/ajustar-ponto-justificativa/AjustarPontoJustificativa";
 
 
 function PagesRoutes() {
@@ -20,6 +22,8 @@ function PagesRoutes() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/bater-ponto" element={<BaterPonto />} />
             <Route path="/home" element={<PrincipalHome />} />
+            <Route path="/ajustar-ponto" element={<AjustarPonto />} />
+            <Route path="/ajustar-ponto-justificativa" element={<AjustarPontoJustificativa />} />
         </Routes>
     );
 }

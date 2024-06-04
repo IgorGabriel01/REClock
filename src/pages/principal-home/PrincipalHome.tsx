@@ -1,5 +1,5 @@
 import { Navigation } from "../../components/navigation-menu/Navigation";
-import { Header } from "../../components/header-principal/HeaderPrincipal";
+import { HeaderPrincipal } from "../../components/header-principal/HeaderPrincipal";
 import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import manha from "../../assets/img/icons/manha.png";
@@ -50,7 +50,10 @@ export const PrincipalHome:React.FC = ()=> {
             setFimIntervalo({
                 hora: fimIntervalo.hora + 1,
                 minutos: parsedData.intervalo.minutos
-            });    
+            });
+
+            const home = document.getElementById('home') as HTMLElement;
+            home.style.opacity = '1.5';
         }
     }, []);
 
@@ -58,7 +61,8 @@ export const PrincipalHome:React.FC = ()=> {
         <div className={styles.home}>
             <Navigation />
             <section className={styles.maincontenthome}>
-                <Header atualPage="" />
+                <HeaderPrincipal
+                 atualPage="Home" />
 
                 <div className={styles.contenthome}>
                     <h2>

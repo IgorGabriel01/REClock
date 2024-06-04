@@ -1,0 +1,152 @@
+.ajustarpontojustificativa {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    section {
+        width: 80vw;
+        display: flex;
+        gap: 1.4rem;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.7rem 3rem;
+        background-color: var(--sixth-color);
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-self: self-start;
+            width: 58.5%;
+    
+            h1 {
+                color: var(--third-color);
+            }
+    
+            .arrowlink {
+                color: var(--third-color);
+                font-size: 2rem;
+            }
+        }
+
+        .divp {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .sectionjustificativa {
+                width: 60%;
+                padding: 1.4rem 2rem;
+                background-color: var(--third-color);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 0.5rem;
+
+                h2 {
+                    color: var(--fourth-color);
+                    font-weight: 800;
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    color: var(--fourth-color);
+                    font-size: 0.8rem;
+                    font-weight: 300;
+                    margin-bottom: 0.5rem;
+                }
+
+                form {
+                    width: 100%;
+                    margin-top: 0.8rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    h3 {
+                        color: var(--fourth-color);
+                        font-size: 1rem;
+                    }
+
+                    .divpinputradio {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        gap: 2rem;
+
+                        .inputradio {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            color: var(--fourth-color);
+                            font-weight: 300;
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                    select {
+                        padding: 0.5rem;
+                        background-color: transparent;
+                        border: 0.5px solid var(--fourth-color);
+                        border-radius: 0.3rem;
+                        color: var(--fourth-color);
+
+                        option {
+                            background-color: var(--fourth-color);
+                            color: #000;
+                            border-radius: 1px;
+                        }
+                    }
+
+                    .inputfile {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        label {
+                            width: 100%;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            color: var(--third-color);
+                            background-color: var(--fourth-color);
+                            padding: 1rem;
+                            border-radius: 0.5rem;
+
+                            :first-child {
+                                border-right: 1px solid var(--second-color);
+                            }
+
+                            span {
+                                width: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 0.8rem;
+                            }
+                        }
+                        
+                        input {
+                            display: none;
+                        }
+                    }
+
+                    button {
+                        margin: 0 auto;
+                        border: none;
+                        background-color: var(--fourth-color);
+                        padding: 0.8rem;
+                        border-radius: 0.5rem;
+                        font-weight: 700;
+                        color: var(--second-color);
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}

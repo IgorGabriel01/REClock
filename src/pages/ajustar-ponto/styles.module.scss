@@ -1,0 +1,83 @@
+.ajustarponto {
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+
+    h1 {
+        color: var(--third-color);
+    }
+
+    section {
+        width: 80vw;
+        background-color: var(--sixth-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        
+        .dpai {
+            padding: 2.5rem 6rem;
+            background-color: var(--third-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3.5rem;
+            color: var(--fourth-color);
+            font-weight: 800;
+            width: 80%;
+            border-radius: 1rem;
+            text-align: center;
+
+            .divicons {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                gap: 4rem;
+
+                div {
+                    background-color: var(--fourth-color);
+                    padding: 2rem;
+                    color: var(--third-color);
+                    font-size: 0.8rem;
+                    width: 45%;
+                    height: 10rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2rem;
+                    text-align: center;
+                    border-radius: 1rem;
+                    transition: 0.8s;
+
+                    img {
+                        width: 3rem;
+                    }
+                }
+
+                div:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    transition: 0.8s;
+                }
+            }
+            .button {
+                width: 100%;
+
+                button {
+                    width: 60%;
+                    border: none;
+                    padding: 0.8rem 2rem;
+                    border-radius: 0.5rem;
+                    background-color: var(--fourth-color);
+                    color: var(--third-color);
+                    font-weight: 700;
+                    transition: 0.8s;
+                }
+            }
+        }
+    }
+}
