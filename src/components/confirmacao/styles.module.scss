@@ -1,0 +1,18 @@
+.confirmacao {
+    display: none;
+    background-color: var(--second-color);
+    padding: 2rem 3rem;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    border-radius: 0.5rem;
+    text-align: center;
+
+    p {
+        color: var(--fourth-color);
+    }
+
+    span {
+        font-weight: 800;
+    }
+}

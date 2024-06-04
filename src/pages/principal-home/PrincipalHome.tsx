@@ -6,10 +6,13 @@ import manha from "../../assets/img/icons/manha.png";
 import tarde from "../../assets/img/icons/tarde.png";
 import noite from "../../assets/img/icons/noite.png";
 import madrugada from "../../assets/img/icons/madrugada.png";
+import { ConfirmacaoMain } from "../../components/confirmacao-main/ConfirmacaoMain";
 
 export const PrincipalHome:React.FC = ()=> {
 
     document.title = 'REClock - Home';
+
+    const horarioData = new Date();
 
     const data = localStorage.getItem('savedata') as string;
     const parsedData = JSON.parse(data);
@@ -46,15 +49,15 @@ export const PrincipalHome:React.FC = ()=> {
                 setSegundoTurno('Manhã');
                 setSecondIcon(manha);
             }
-            
-            setFimIntervalo({
-                hora: fimIntervalo.hora + 1,
-                minutos: parsedData.intervalo.minutos
-            });
-
-            const home = document.getElementById('home') as HTMLElement;
-            home.style.opacity = '1.5';
         }
+            
+        setFimIntervalo({
+            hora: fimIntervalo.hora + 1,
+            minutos: parsedData.intervalo.minutos
+        });
+
+        const home = document.getElementById('home') as HTMLElement;
+        home.style.opacity = '1.5';
     }, []);
 
     return (
@@ -102,6 +105,7 @@ export const PrincipalHome:React.FC = ()=> {
                     </div>
                 </div>
             </section>
+            <ConfirmacaoMain title='Ponto batido' hora={`${(horarioData.getHours() < 10) ? '0' + horarioData.getHours() : String(horarioData.getHours())}:${(horarioData.getMinutes() < 10) ? '0' + horarioData.getMinutes() : String(horarioData.getMinutes())}:${(horarioData.getSeconds() < 10) ? '0' + horarioData.getSeconds() : String(horarioData.getSeconds())}`} data={`${(horarioData.getDate() < 10) ? '0' + horarioData.getDate() : horarioData.getDate()}/${(horarioData.getMonth() + 1 < 10) ? '0' + (horarioData.getMonth() + 1) : horarioData.getMonth() + 1}/${horarioData.getFullYear()}`}/>
         </div>
     )
 }

@@ -1,12 +1,12 @@
 .header {
     height: 16.5vh;
     width: 100%;
-    background-color: var(--sixth-color);
+    background-color: var(--fourth-color);
     display: flex;
     align-items: center;
     justify-content: end;
 
-    div {
+    .divheader {
         width: 70%;
         display: flex;
         justify-content: space-between;

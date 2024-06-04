@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { Navigation } from "../../components/navigation-menu/Navigation";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom";
+import { Confirmacao } from "../../components/confirmacao/confirmacao";
 
 export const AjustarPontoJustificativa:React.FC = () => {
 
@@ -13,11 +14,18 @@ export const AjustarPontoJustificativa:React.FC = () => {
         ajustarPonto.style.opacity = '1';
     }, [])
 
-    const data = new Date();
+    const horarioData = new Date();
 
-    const dia = (data.getDate() < 10) ? '0' + data.getDate() : String(data.getDate());
-    const mes = ((data.getMonth() + 1) < 10) ? '0' + (data.getMonth() + 1) : String(data.getMonth() + 1)
-    const ano = data.getFullYear();
+    const dia = (horarioData.getDate() < 10) ? '0' + horarioData.getDate() : String(horarioData.getDate());
+    const mes = ((horarioData.getMonth() + 1) < 10) ? '0' + (horarioData.getMonth() + 1) : String(horarioData.getMonth() + 1)
+    const ano = horarioData.getFullYear();
+
+    const [validaInputs, setValidaInputs] = useState({
+        input1: false,
+        input2: false,
+        input3: true,
+        input4: false 
+    });
 
     return (
         <div className={styles.ajustarpontojustificativa}>
@@ -39,16 +47,34 @@ export const AjustarPontoJustificativa:React.FC = () => {
 
                             <div className={styles.divpinputradio}>
                                 <div className={styles.inputradio}>
-                                    <input name="problema" type="radio" id="problemas-tecnicos"/>
-                                    <label htmlFor="problemas-tecnicos">Problemas técnicos</label>
+                                    <input name="problema" type="radio" id="problemas-tecnicos" onChange={()=>{
+                                        const tecnicos = document.getElementById('valor-input-tecnicos') as HTMLElement;
+                                        const atestados = document.getElementById('valor-input-atestados') as HTMLElement;
+
+                                        tecnicos.style.display = 'block';
+                                        atestados.style.display = 'none';
+
+                                        setValidaInputs(validaInputs => ({...validaInputs, input1: true}));
+                                    }}/>
+                                    <label htmlFor="problemas-tecnicos">Atestados / Declarações</label>
                                 </div>
                                 <div className={styles.inputradio}>
-                                    <input name="problema" type="radio" id="atestados-declaracoes"/>
-                                    <label htmlFor="atestados-declaracoes">Atestados / Declarações</label>
+                                    <input name="problema" type="radio" id="atestados-declaracoes" onChange={()=>{
+                                        const atestados = document.getElementById('valor-input-atestados') as HTMLElement;
+                                        const tecnicos = document.getElementById('valor-input-tecnicos') as HTMLElement;
+
+                                        atestados.style.display = 'block';
+                                        tecnicos.style.display = 'none';
+
+                                        setValidaInputs(validaInputs => ({...validaInputs, input1: true}));
+                                    }}/>
+                                    <label htmlFor="atestados-declaracoes">Problemas técnicos</label>
                                 </div>
                             </div>
-        
-                            <select name="valor-input-tecnicos" id="valor-input-tecnicos">
+
+                            <select className={styles.inputjustificativa} name="valor-input-tecnicos" id="valor-input-tecnicos" onChange={()=>{
+                                setValidaInputs(validaInputs => ({...validaInputs, input2: true}));
+                            }}>
                                 <option value="none" selected>Selecione</option>
                                 <option value="acompanhamentoconjugegestante">Acompanhamento cônjuge gestante</option>
                                 <option value="acompanhamentoidoso">Acompanhamento idoso</option>
@@ -66,7 +92,9 @@ export const AjustarPontoJustificativa:React.FC = () => {
                                 <option value="vestibular">Vestibular</option>
                             </select>
         
-                            <select name="valor-input-atestados" id="valor-input-atestados">
+                            <select className={styles.inputjustificativa} name="valor-input-atestados" id="valor-input-atestados" onChange={()=>{
+                                setValidaInputs(validaInputs => ({...validaInputs, input2: true}));
+                            }}>
                                 <option value="none" selected>Selecione</option>
                                 <option value="computadorcolaborador">Computador colaborador</option>
                                 <option value="computadorempresa">Computador empresa</option>
@@ -78,30 +106,51 @@ export const AjustarPontoJustificativa:React.FC = () => {
 
                             <select name="valor-input-horario" id="valor-input-horario">
                                 <option value={`${dia}/${mes}/${ano}`}>{`${dia}/${mes}/${ano}`}</option>
-                                <option value={`${'0' + (data.getDate() - 1)}/${mes}/${ano}`}>{`${'0' + (data.getDate() - 1)}/${mes}/${ano}`}</option>
-                                <option value={`${'0' + (data.getDate() - 2)}/${mes}/${ano}`}>{`${'0' + (data.getDate() - 2)}/${mes}/${ano}`}</option>
+                                <option value={`${'0' + (horarioData.getDate() - 1)}/${mes}/${ano}`}>{`${'0' + (horarioData.getDate() - 1)}/${mes}/${ano}`}</option>
+                                <option value={`${'0' + (horarioData.getDate() - 2)}/${mes}/${ano}`}>{`${'0' + (horarioData.getDate() - 2)}/${mes}/${ano}`}</option>
                             </select>
 
                             <h3>Anexe aqui o seu atestado ou protocolo:</h3>
 
                             <div className={styles.inputfile}>
+                                <input type="file" id="file" accept=".jpg, .jpeg, .png, .pdf" onChange={() => {
+                                    const spantext = document.getElementById('spantext') as HTMLElement;
+
+                                    spantext.textContent = '(1) Arquivo recebido';
+                                    setValidaInputs(validaInputs => ({...validaInputs, input4: true}));
+                                }}/>
                                 <label htmlFor="file">
                                     <span>
                                         Escolher arquivo
                                     </span>
-                                    <span>
+                                    <span id="spantext">
                                         Formato aceitos: pdf, jpg, png
                                     </span>
                                 </label>
-                                <input type="file" id="file"/>
                             </div>
                             
+                            <button type="reset" onClick={(e)=>{
+                                if (validaInputs.input1 == false || validaInputs.input2 == false || validaInputs.input3 == false || validaInputs.input4 == false) {
+                                    e.preventDefault();
+                                    console.log(validaInputs);
+                                } else {
+                                    const confirmacao = document.getElementById('confirmacao') as HTMLElement;
 
-                            <button>Enviar solicitação</button>
+                                    const spantext = document.getElementById('spantext') as HTMLElement;
+                                    spantext.textContent = 'Formato aceitos: pdf, jpg, png';
+
+                                    confirmacao.style.display = 'block';
+
+                                    setTimeout(() => {
+                                        confirmacao.style.display = 'none';
+                                    }, 3000);
+                                }
+                            }}>Enviar solicitação</button>
                         </form>
                     </div>
                 </div>
             </section>
+            <Confirmacao title="Justificativa enviada" hora={`${(horarioData.getHours() < 10) ? '0' + horarioData.getHours() : String(horarioData.getHours())}:${(horarioData.getMinutes() < 10) ? '0' + horarioData.getMinutes() : String(horarioData.getMinutes())}:${(horarioData.getSeconds() < 10) ? '0' + horarioData.getSeconds() : String(horarioData.getSeconds())}`} data={`${(horarioData.getDate() < 10) ? '0' + horarioData.getDate() : horarioData.getDate()}/${(horarioData.getMonth() + 1 < 10) ? '0' + (horarioData.getMonth() + 1) : horarioData.getMonth() + 1}/${horarioData.getFullYear()}`}/>
         </div>
     )
 }
