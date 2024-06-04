@@ -8,6 +8,7 @@ import { Sobre } from "../pages/sobre/Sobre";
 import { TermosPrivacidade } from "../pages/termos-privacidade/TermosPrivacidade";
 import { BaterPonto } from "../pages/bater-ponto/BaterPonto";
 
+
 function PagesRoutes() {
     return (
         <Routes>

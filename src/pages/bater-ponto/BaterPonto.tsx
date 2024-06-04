@@ -46,7 +46,7 @@ export const BaterPonto: React.FC = ()=>{
 
                     <Link 
                     className={styles.enter} 
-                    to={'/navigation'}>
+                    to={'/home'}>
                         <ExitToAppIcon 
                         className={styles.icon} />
                         <p>Entrar sem bater ponto</p>
@@ -79,9 +79,8 @@ export const BaterPonto: React.FC = ()=>{
                     className={styles.secondiv}>
                         {`DATA: ${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`}
                     </div>
-
                 </div>   
-
+                <Link className={styles.secondlink} to={'/home'}>
                 <button onClick={()=>{
                     const dataParsed = JSON.parse(horario);
 
@@ -97,8 +96,7 @@ export const BaterPonto: React.FC = ()=>{
                         console.log(localStorage.getItem('pontoBatido'));
                         console.log(localStorage.getItem('savedata'));
 
-                        }}>Bater ponto</button>
-                </Link>
+                        }}>Bater ponto</button></Link>
             </div> 
         </section>
     )
