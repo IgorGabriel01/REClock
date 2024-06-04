@@ -9,6 +9,7 @@ import { TermosPrivacidade } from "../pages/termos-privacidade/TermosPrivacidade
 import { AjustarPonto } from "../pages/ajustar-ponto/AjustarPonto";
 import { BaterPonto } from "../pages/bater-ponto/BaterPonto";
 import { AjustarPontoJustificativa } from "../pages/ajustar-ponto-justificativa/AjustarPontoJustificativa";
+import { Suporte } from "../pages/suporte/Suporte";
 import { BancoHora } from "../pages/banco-hora/BancoHora";
 import { MeuPonto } from "../pages/meus-pontos/MeuPonto";
 
