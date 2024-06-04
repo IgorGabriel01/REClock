@@ -15,7 +15,8 @@ export const BaterPonto: React.FC = ()=>{
     const [hora, setHora] = useState('');
     const [minutos, setMinutos] = useState('');
     const [segundos, setSegundos] = useState('');
-
+    const [endereco, setEndereco] = useState<string>('');
+    
     useEffect(() => {
         const interval = setInterval(() => {
             const dataHoraAtual = new Date();
@@ -45,24 +46,46 @@ export const BaterPonto: React.FC = ()=>{
                         localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
                     }}>
                     <p className={styles.texth}>REClock</p>
-                    <Link className={styles.enter} to={'/home'}>
-                        <ExitToAppIcon className={styles.icon}/>
+
+                    <Link 
+                    className={styles.enter} 
+                    to={'/home'}>
+                        <ExitToAppIcon 
+                        className={styles.icon} />
                         <p>Entrar sem bater ponto</p>
                     </Link>
+
                 </div>  
             </header>
             <main>
-                <Mapa/>
+                <Mapa 
+                onAddressChange={setEndereco}
+                 />
             </main>
-            <div className={styles.dinfos}>
-                <div className={styles.infos}>
-                    <div className={styles.firstdiv}>Localidade atual</div>
-                    <div className={styles.secondiv}>{`HORÁRIO: ${hora}:${minutos}:${segundos}`}</div>
-                    <div className={styles.secondiv}>{`DATA: ${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`}</div>
-                </div>
+            <div 
+            className={styles.dinfos}>
+                
+                <div 
+                className={styles.infos}>
+                    
+                    <div 
+                    className={styles.firstdiv}>
+                        {`${endereco}`}
+                    </div>  
+                    
+                    <div 
+                    className={styles.secondiv}>
+                        {`HORÁRIO: ${hora}:${minutos}:${segundos}`}
+                    </div>
+                    
+                    <div 
+                    className={styles.secondiv}>
+                        {`DATA: ${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`}
+                    </div>
+                </div>   
                 <Link className={styles.secondlink} to={'/home'}>
-                    <button onClick={()=>{
-                        const dataParsed = JSON.parse(horario);
+                <button onClick={()=>{
+                    const dataParsed = JSON.parse(horario);
 
                         dataParsed.horario = `${hora}:${minutos}:${segundos}`;
 
@@ -78,3 +101,4 @@ export const BaterPonto: React.FC = ()=>{
         </section>
     )
 }
+

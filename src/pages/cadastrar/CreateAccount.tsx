@@ -298,7 +298,7 @@ export const CreateAccount: React.FC = () => {
                     title={'Conta criada com sucesso!'}
                     description={'Faça login para continuar'}
                     />
-                    <p className={styles.ftext}>Ao clicar em cadastra-se, você concorda com nossos <Link to={'/termos-privacidade'}><span> termos de serviço e política de privacidade</span></Link></p>
+                    <p className={styles.ftext}>Ao clicar em cadastrar, você concorda com nossos <Link to={'/termos-privacidade'}><br></br><span> termos de serviço e política de privacidade</span></Link></p>
                 </form>
             </section>
         </div>
