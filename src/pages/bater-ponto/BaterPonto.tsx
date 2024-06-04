@@ -15,9 +15,8 @@ export const BaterPonto: React.FC = ()=>{
     const [hora, setHora] = useState('');
     const [minutos, setMinutos] = useState('');
     const [segundos, setSegundos] = useState('');
-    const [horario] = useState(localStorage.getItem('savedata') as string);
     const [endereco, setEndereco] = useState<string>('');
-    /*const defaultPosition = { lat: -8.093482718431053, lng: -34.93532186044794 };*/
+    
     useEffect(() => {
         const interval = setInterval(() => {
             const dataHoraAtual = new Date();

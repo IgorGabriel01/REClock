@@ -14,6 +14,7 @@ import { useContext, useEffect, useState } from "react";
 import { DadosContext } from "../../services/ContextProvider";
 import { ModalTask } from "../../pages/modal-task/MotalTask";
 import { Link } from "react-router-dom";
+import HistoryIcon from '@mui/icons-material/History';
 
 export const Navigation: React.FC = () => {
 
@@ -55,6 +56,7 @@ export const Navigation: React.FC = () => {
                         <Link className={styles.linkli} to={'/home'}><li id="home"> <HomeIcon /> Home</li></Link>
                         <Link className={styles.linkli} to={'/ajustar-ponto'}><li id="meus-pontos"> <CalendarMonthIcon /> Meus pontos</li></Link> 
                         <Link className={styles.linkli} to={'/ajustar-ponto'}><li id="ajustar-pontos"> <EditCalendarIcon /> Ajustar pontos</li></Link> 
+                        <Link className={styles.linkli} to={'/banco-de-horas'}><li id="ajustar-pontos"> <HistoryIcon /> Banco de horas</li></Link> 
                     </ul>
                 </div>
                 <div className={styles.addtasks}>
