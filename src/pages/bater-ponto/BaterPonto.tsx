@@ -10,10 +10,11 @@ export const BaterPonto: React.FC = ()=>{
     
     const dataHoraAtual = new Date();
 
+    const [horario] = useState(localStorage.getItem('savedata') as string);
+
     const [hora, setHora] = useState('');
     const [minutos, setMinutos] = useState('');
     const [segundos, setSegundos] = useState('');
-    const [horario] = useState(localStorage.getItem('savedata') as string);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -38,6 +39,8 @@ export const BaterPonto: React.FC = ()=>{
                         const dataParsed = JSON.parse(horario);
 
                         dataParsed.pontoBatido = false;
+                        dataParsed.horario = '';
+                        dataParsed.data = '';
 
                         localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
                     }}>
@@ -61,7 +64,7 @@ export const BaterPonto: React.FC = ()=>{
                     <button onClick={()=>{
                         const dataParsed = JSON.parse(horario);
 
-                        dataParsed.entradaExpediente = `${hora}:${minutos}:${segundos}`;
+                        dataParsed.horario = `${hora}:${minutos}:${segundos}`;
 
                         dataParsed.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
 
@@ -70,9 +73,7 @@ export const BaterPonto: React.FC = ()=>{
                         localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
                         localStorage.setItem('savedata', JSON.stringify(dataParsed));
 
-                        console.log(localStorage.getItem('pontoBatido'));
-                        console.log(localStorage.getItem('savedata'));
-
+                        console.log(dataParsed);
                         }}>Bater ponto</button>
                 </Link>
             </div> 

@@ -52,9 +52,9 @@ export const Navigation: React.FC = () => {
                         <p>REClock</p>
                     </div>
                     <ul>
-                        <li> <HomeIcon /> Home</li>
-                        <li> <CalendarMonthIcon /> Meus pontos</li>
-                        <li> <EditCalendarIcon /> Ajustar pontos</li>
+                        <Link className={styles.linkli} to={'/home'}><li id="home"> <HomeIcon /> Home</li></Link>
+                        <Link className={styles.linkli} to={'/ajustar-ponto'}><li id="meus-pontos"> <CalendarMonthIcon /> Meus pontos</li></Link> 
+                        <Link className={styles.linkli} to={'/ajustar-ponto'}><li id="ajustar-pontos"> <EditCalendarIcon /> Ajustar pontos</li></Link> 
                     </ul>
                 </div>
                 <div className={styles.addtasks}>

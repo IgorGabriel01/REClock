@@ -5,9 +5,12 @@ interface PropsHeader {
     atualPage: string;
 }
 
-export const Header:React.FC<PropsHeader> = (props) => {
+export const HeaderPrincipal:React.FC<PropsHeader> = (props) => {
     const [atualPage, setAtualPage] = useState(props.atualPage);
     const [titleButton, setTitleButton] = useState('');
+
+    const dataLocal = localStorage.getItem('pontoBatido') as string;
+    const parsedDataLocal = JSON.parse(dataLocal);
 
     const dataHoraAtual = new Date();
 
@@ -24,9 +27,6 @@ export const Header:React.FC<PropsHeader> = (props) => {
     useEffect(()=>{
         setAtualPage(`${diasDaSemana[dataHoraAtual.getDay()]}, ${data} de ${mes} de ${ano}`);
 
-        const dataLocal = localStorage.getItem('pontoBatido') as string;
-        const parsedDataLocal = JSON.parse(dataLocal);
-
         if (parsedDataLocal.pontoBatido == false) {
             setTitleButton('Bater ponto');
         } else if(parsedDataLocal.pontoBatido == true && dataHoraAtual.getHours() < parsedDataLocal.intervalo.hora) {
@@ -35,7 +35,7 @@ export const Header:React.FC<PropsHeader> = (props) => {
             setTitleButton('Encerrar intervalo');
         } else if (parsedDataLocal.pontoBatido == true && dataHoraAtual.getHours() > parsedDataLocal.intervalo.hora + 1){
             setTitleButton('Marcar saída');
-        }}, [])
+    }}, [])
 
     return (
         <header className={styles.header}>
@@ -45,18 +45,18 @@ export const Header:React.FC<PropsHeader> = (props) => {
                     const valorBotao = e.target as HTMLElement;
                     const textValorBotao = valorBotao.textContent as string;
 
-                    const dataLocal = localStorage.getItem('pontoBatido') as string;
-                    const parsedDataLocal = JSON.parse(dataLocal);
-
                     if(textValorBotao === 'Bater ponto'){
                         setTitleButton('Iniciar intervalo');
+                        parsedDataLocal.horario = `${hora}:${minutos}:${segundos}`;
                         parsedDataLocal.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
+                        parsedDataLocal.pontoBatido = true;
                     } else if (textValorBotao === 'Iniciar intervalo') {
                         setTitleButton('Encerrar intervalo');
                     } else if(textValorBotao === 'Encerrar intervalo') {
                         setTitleButton('Marcar saída');
                     } else if(textValorBotao === 'Marcar saída'){
                         e.preventDefault();
+                        console.log(document.querySelector('header div button'));
                     }
                 }}>{titleButton}</button>
             </div>
