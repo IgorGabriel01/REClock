@@ -33,6 +33,27 @@ export const BaterPonto: React.FC = ()=>{
         return () => clearInterval(interval);
     }, []);
 
+    const handleBaterPonto = () => {
+        const dataParsed = JSON.parse(horario);
+
+        dataParsed.horario = `${hora}:${minutos}:${segundos}`;
+        dataParsed.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
+        dataParsed.endereco = endereco;
+        dataParsed.pontoBatido = true;
+
+        localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
+        localStorage.setItem('savedata', JSON.stringify(dataParsed));
+
+        // Save point data to localStorage
+        const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
+        savedPoints.push({
+            endereco: endereco,
+            data: dataParsed.data,
+            horario: dataParsed.horario
+        });
+        localStorage.setItem('pontos', JSON.stringify(savedPoints));
+    };
+
     return(
         <section className={styles.baterponto}>
             <header>
@@ -84,18 +105,7 @@ export const BaterPonto: React.FC = ()=>{
                     </div>
                 </div>   
                 <Link className={styles.secondlink} to={'/home'}>
-                <button onClick={()=>{
-                    const dataParsed = JSON.parse(horario);
-
-                        dataParsed.horario = `${hora}:${minutos}:${segundos}`;
-
-                        dataParsed.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
-
-                        dataParsed.pontoBatido = true;
-
-                        localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
-                        localStorage.setItem('savedata', JSON.stringify(dataParsed));
-                        }}>Bater ponto</button>
+                <button onClick={handleBaterPonto}>Bater ponto</button>
                 </Link>
             </div> 
         </section>

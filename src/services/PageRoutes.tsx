@@ -10,6 +10,7 @@ import { AjustarPonto } from "../pages/ajustar-ponto/AjustarPonto";
 import { BaterPonto } from "../pages/bater-ponto/BaterPonto";
 import { AjustarPontoJustificativa } from "../pages/ajustar-ponto-justificativa/AjustarPontoJustificativa";
 import { BancoHora } from "../pages/banco-hora/BancoHora";
+import { MeuPonto } from "../pages/meus-pontos/MeuPonto";
 
 
 function PagesRoutes() {
@@ -26,6 +27,7 @@ function PagesRoutes() {
             <Route path="/ajustar-ponto" element={<AjustarPonto />} />
             <Route path="/ajustar-ponto-justificativa" element={<AjustarPontoJustificativa />} />
             <Route path="/banco-de-horas" element={<BancoHora />} />
+            <Route path="/meu-ponto" element={<MeuPonto />} />
         </Routes>
     );
 }

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import styles from './styles.module.scss'
 
 const containerStyle = {
   width: '100%',
-  height: '85vh' 
+  height: '60vh' 
 };
 
 interface Position {
@@ -57,7 +58,7 @@ const Mapa: React.FC<MapaProps> = ({ onAddressChange }) =>  {
     <div className="map-container">
       {isLoaded && currentPosition ? (
         <GoogleMap
-          mapContainerStyle={containerStyle}
+          mapContainerClassName={styles.mapa}
           center={currentPosition}
           zoom={17}
         >

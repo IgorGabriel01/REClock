@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import img from '../../assets/img/Group 2.png';
 import img2 from '../../assets/img/Group 2758.png';
 import img3 from '../../assets/img/atual.png';
@@ -9,13 +10,17 @@ import styles from './styles.module.scss'
 export const BancoHora: React.FC = () => {
     document.title = 'REClock - Banco de horas'
 
+    useEffect(()=>{
+        const bancoHora = document.getElementById('banco-hora') as HTMLElement;
+        bancoHora.style.opacity = '1';
+    }, [])
+    
     return (
         <div className={styles.bancoHora}>
             <Navigation />
             <section>
                 <header>
                     <h1>Banco de horas</h1>
-                   
                 </header>
                 <div className={styles.container}>
                     <div className={styles.hora}>
