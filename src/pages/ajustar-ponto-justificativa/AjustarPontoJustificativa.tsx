@@ -139,6 +139,12 @@ export const AjustarPontoJustificativa:React.FC = () => {
                                     const spantext = document.getElementById('spantext') as HTMLElement;
                                     spantext.textContent = 'Formato aceitos: pdf, jpg, png';
 
+                                    const input1 = document.getElementById('valor-input-tecnicos') as HTMLElement;
+                                    const input2 = document.getElementById('valor-input-atestados') as HTMLElement;
+
+                                    input1.style.display = 'none';
+                                    input2.style.display = 'none';
+
                                     confirmacao.style.display = 'block';
 
                                     setTimeout(() => {
