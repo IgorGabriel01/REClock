@@ -72,8 +72,6 @@ export const BaterPonto: React.FC = ()=>{
 
                         localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
                         localStorage.setItem('savedata', JSON.stringify(dataParsed));
-
-                        console.log(dataParsed);
                         }}>Bater ponto</button>
                 </Link>
             </div> 

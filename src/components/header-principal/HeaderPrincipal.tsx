@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import { Confirmacao } from "../confirmacao/confirmacao";
+import { Link } from "react-router-dom";
 
 interface PropsHeader {
     atualPage: string;
@@ -24,42 +26,73 @@ export const HeaderPrincipal:React.FC<PropsHeader> = (props) => {
     const mes = dataHoraAtual.toLocaleString('pt-BR', { month: 'long' });
     const ano = dataHoraAtual.getFullYear();
 
+    const [title, setTitle] = useState('');
+
     useEffect(()=>{
         setAtualPage(`${diasDaSemana[dataHoraAtual.getDay()]}, ${data} de ${mes} de ${ano}`);
 
         if (parsedDataLocal.pontoBatido == false) {
             setTitleButton('Bater ponto');
-        } else if(parsedDataLocal.pontoBatido == true && dataHoraAtual.getHours() < parsedDataLocal.intervalo.hora) {
+        } else {
             setTitleButton('Iniciar intervalo');
-        } else if(parsedDataLocal.pontoBatido == true && dataHoraAtual.getHours() > parsedDataLocal.intervalo.hora && dataHoraAtual.getHours() > parsedDataLocal.intervalo.hora + 1){
-            setTitleButton('Encerrar intervalo');
-        } else if (parsedDataLocal.pontoBatido == true && dataHoraAtual.getHours() > parsedDataLocal.intervalo.hora + 1){
-            setTitleButton('Marcar saída');
-    }}, [])
+        }
+    }, [])
 
     return (
         <header className={styles.header}>
-            <div>
+            <div className={styles.divheader}>
                 <h1>{atualPage}</h1>
-                <button onClick={(e)=>{
-                    const valorBotao = e.target as HTMLElement;
-                    const textValorBotao = valorBotao.textContent as string;
+                <Link to='/' onClick={(e)=>{
+                        const valorBotao = e.target as HTMLElement;
+                        const textValorBotao = valorBotao.textContent as string;
 
-                    if(textValorBotao === 'Bater ponto'){
-                        setTitleButton('Iniciar intervalo');
-                        parsedDataLocal.horario = `${hora}:${minutos}:${segundos}`;
-                        parsedDataLocal.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
-                        parsedDataLocal.pontoBatido = true;
-                    } else if (textValorBotao === 'Iniciar intervalo') {
-                        setTitleButton('Encerrar intervalo');
-                    } else if(textValorBotao === 'Encerrar intervalo') {
-                        setTitleButton('Marcar saída');
-                    } else if(textValorBotao === 'Marcar saída'){
-                        e.preventDefault();
-                        console.log(document.querySelector('header div button'));
-                    }
-                }}>{titleButton}</button>
+                        const confirmacao = document.getElementById('confirmacao') as HTMLElement;
+
+                        if(textValorBotao === 'Bater ponto'){
+                            e.preventDefault();
+                            setTitleButton('Iniciar intervalo');
+                            parsedDataLocal.horario = `${hora}:${minutos}:${segundos}`;
+                            parsedDataLocal.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
+                            parsedDataLocal.pontoBatido = true;
+
+                            setTitle('Ponto batido');
+                            
+                            confirmacao.style.display = 'block';
+
+                            setTimeout(() => {
+                                confirmacao.style.display = 'none';
+                            }, 2000);
+                        } else if (textValorBotao === 'Iniciar intervalo') {
+                            e.preventDefault();
+                            setTitleButton('Encerrar intervalo');
+
+                            setTitle('Intervalo iniciado');
+
+                            confirmacao.style.display = 'block';
+
+                            setTimeout(() => {
+                                confirmacao.style.display = 'none';
+                            }, 2000);
+                        } else if(textValorBotao === 'Encerrar intervalo') {
+                            e.preventDefault();
+                            setTitleButton('Marcar saída');
+
+                            setTitle('Intervalo finalizado');
+
+                            confirmacao.style.display = 'block';
+
+                            setTimeout(() => {
+                                confirmacao.style.display = 'none';
+                            }, 2000);
+                        } else if(textValorBotao === 'Marcar saída'){
+                            
+                            console.log(document.querySelector('header div button'));
+                        }
+                    }}>
+                    <button>{titleButton}</button>
+                </Link>
             </div>
+            <Confirmacao title={title} hora={`${(dataHoraAtual.getHours() < 10) ? '0' + dataHoraAtual.getHours() : String(dataHoraAtual.getHours())}:${(dataHoraAtual.getMinutes() < 10) ? '0' + dataHoraAtual.getMinutes() : String(dataHoraAtual.getMinutes())}:${(dataHoraAtual.getSeconds() < 10) ? '0' + dataHoraAtual.getSeconds() : String(dataHoraAtual.getSeconds())}`} data={`${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`}/>
         </header>
     )
 }
