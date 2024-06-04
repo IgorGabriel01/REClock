@@ -1,0 +1,35 @@
+.header {
+    height: 16.5vh;
+    width: 100%;
+    background-color: var(--sixth-color);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    div {
+        width: 67%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 2rem;
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--third-color);
+            padding: 0.4rem 3rem;
+            border: 1px solid var(--third-color);
+            border-radius: 0.5rem;
+        }
+    
+        button {
+            border: none;
+            font-size: 0.8rem;
+            font-weight: 750;
+            background-color: var(--third-color);
+            color: var(--fourth-color);
+            padding: 0.9rem 2rem;
+            border-radius: 0.5rem;
+            transition: 0.5s;
+        } 
+    }
+}

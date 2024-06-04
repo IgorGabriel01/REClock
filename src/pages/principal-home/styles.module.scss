@@ -1,0 +1,73 @@
+.home {
+    width: 100vw;
+    display: flex;
+
+    .maincontenthome {
+        background-color: var(--sixth-color);
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.8rem;
+
+        .contenthome {
+            background-color: var(--third-color);
+            width: 80%;
+            height: 70%;
+            padding: 1.8rem 2rem;
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            h2 {
+                color: var(--fourth-color);
+                font-size: 1.25rem;
+                font-weight: 700;
+            }
+
+            .horarios {
+                width: 100%;
+                border: 1px solid var(--fourth-color);
+                border-radius: 0.3rem;
+                
+                .primeiroex {
+                    width: 100%;
+                
+                    .firstdivex {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        color: var(--fourth-color);
+                        border-bottom: 1px solid var(--fourth-color);
+                        padding: 0.6rem 1rem;
+
+                        div {
+                            display: flex;
+                            color: var(--fourth-color);
+                            align-items: center;
+                            gap: 0.5rem;
+                            font-weight: 600;
+
+                            img {
+                                width: 20%;
+                            }
+                        }
+                    }
+
+                    .seconddivex {
+                        margin: 1.5rem auto;
+                        display: flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        width: 80%;
+                        color: var(--fourth-color
+                        );
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
