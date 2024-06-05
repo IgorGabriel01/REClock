@@ -73,15 +73,17 @@
       p:first-child {
         font-weight: 800;
         opacity: 1 !important;
+        font-size: 0.8rem;
       }
   
       p {
+        font-size: 0.6rem;
         text-align: center;
         opacity: 0.6;
       }
   
       div {
-        font-size: 1rem;
+        font-size: 0.6rem;
         display: flex;
         padding: 0.2rem 0.5rem;
         align-items: center;
@@ -100,6 +102,7 @@
           color: var(--third-color);
           font-weight: 600;
           transition: 0.5s;
+          font-size: 0.6rem;
         }
         button:hover {
           opacity: 0.7;

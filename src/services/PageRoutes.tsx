@@ -25,6 +25,8 @@ function PagesRoutes() {
             <Route path="/home" element={<PrincipalHome />} />
             <Route path="/ajustar-ponto" element={<AjustarPonto />} />
             <Route path="/ajustar-ponto-justificativa" element={<AjustarPontoJustificativa />} />
+            <Route path="/banco-de-horas" element={<BancoHora />} />
+            <Route path="/suporte" element={<Suporte />} />
         </Routes>
     );
 }
