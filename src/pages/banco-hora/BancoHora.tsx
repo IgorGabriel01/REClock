@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useEffect } from 'react';
 import img from '../../assets/img/Group 2.png';
 import img2 from '../../assets/img/Group 2758.png';
 import img3 from '../../assets/img/atual.png';
@@ -8,7 +7,7 @@ import { Navigation } from '../../components/navigation-menu/Navigation'
 import styles from './styles.module.scss'
 
 export const BancoHora: React.FC = () => {
-    document.title = 'REClock - Banco de horas'
+    document.title = 'REClock - Banco de horas';
 
     useEffect(()=>{
         const bancoHoras = document.getElementById('banco-de-horas') as HTMLElement;

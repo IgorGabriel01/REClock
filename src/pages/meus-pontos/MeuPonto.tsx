@@ -3,9 +3,8 @@ import styles from './styles.module.scss';
 import { Navigation } from '../../components/navigation-menu/Navigation';
 import Mapa from '../../services/api-maps/Mapa';
 
-
 export const MeuPonto: React.FC = () => {
-    document.title = 'REClock - meus pontos';
+    document.title = 'REClock - Meus pontos';
 
     const [pontos, setPontos] = useState<Array<{ endereco: string, data: string, horario: string }>>([]);
     const [endereco, setEndereco] = useState<string>('');
@@ -14,8 +13,8 @@ export const MeuPonto: React.FC = () => {
         const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
         setPontos(savedPoints);
 
-        const meuPonto = document.getElementById('meu-ponto') as HTMLElement;
-        meuPonto.style.opacity = '1';
+        const meuPontoIcon = document.getElementById('meus-pontos') as HTMLElement;
+        meuPontoIcon.style.opacity = '1';
     }, []);
 
     const handleSavePoint = () => {

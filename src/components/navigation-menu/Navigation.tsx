@@ -57,7 +57,7 @@ export const Navigation: React.FC = () => {
                             const confirm = document.getElementById('confirmacao-main') as HTMLElement;
                             confirm.style.display = 'none';
                         }}> <HomeIcon /> Home</li></Link>
-                        <Link className={styles.linkli} to={'/meu-ponto'}><li id="meu-ponto"> <CalendarMonthIcon /> Meus pontos</li></Link> 
+                        <Link className={styles.linkli} to={'/meus-pontos'}><li id="meus-pontos"> <CalendarMonthIcon /> Meus pontos</li></Link> 
                         <Link className={styles.linkli} to={'/ajustar-ponto'}><li id="ajustar-pontos"> <EditCalendarIcon /> Ajustar pontos</li></Link> 
                         <Link className={styles.linkli} to={'/banco-de-horas'}><li id="banco-hora"> <HistoryIcon /> Banco de horas</li></Link> 
                     </ul>
