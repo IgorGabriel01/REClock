@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useEffect } from 'react';
 import img from '../../assets/img/Group 2.png';
 import img2 from '../../assets/img/Group 2758.png';
 import img3 from '../../assets/img/atual.png';
@@ -20,7 +21,6 @@ export const BancoHora: React.FC = () => {
             <section>
                 <header>
                     <h1>Banco de horas</h1>
-                   
                 </header>
                 <div className={styles.container}>
                     <div className={styles.hora}>
