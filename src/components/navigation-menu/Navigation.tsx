@@ -78,7 +78,7 @@ export const Navigation: React.FC = () => {
                 onTaskAdded={handleTaskAdded}/>
                 <div className={styles.seconddivinfos}>
                     <ul>
-                        <Link className={styles.linkli} to='/suporte'> <li> <NotificationsIcon /> Notificações</li></Link>
+                        <Link className={styles.linkli} to='/notificacoes'> <li id="notificacoes"> <NotificationsIcon /> Notificações</li></Link>
                         <Link className={styles.linkli} to='/configuracoes'><li id="configuracoes"> <SettingsIcon /> Configurações</li></Link>
                         <Link className={styles.linkli} to='/suporte'><li id="suporte"><HelpOutlineIcon />Suporte</li></Link> 
                     </ul>

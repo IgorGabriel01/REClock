@@ -13,6 +13,7 @@ import { Suporte } from "../pages/suporte/Suporte";
 import { BancoHora } from "../pages/banco-hora/BancoHora";
 import { MeuPonto } from "../pages/meus-pontos/MeuPonto";
 import { Configuracoes } from "../pages/configuracoes/Configuracoes";
+import { Notificacoes } from "../pages/notificacoes/Notificacoes";
 
 
 function PagesRoutes() {
@@ -31,6 +32,7 @@ function PagesRoutes() {
             <Route path="/banco-de-horas" element={<BancoHora />} />
             <Route path="/meus-pontos" element={<MeuPonto />} />
             <Route path="/configuracoes" element={<Configuracoes />} />
+            <Route path="/notificacoes" element={<Notificacoes />} />
             <Route path="/suporte" element={<Suporte />} />
         </Routes>
     );

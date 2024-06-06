@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export const Suporte:React.FC = () => {
 
-    document.title = 'REClock - Ajuda'
+    document.title = 'REClock - Suporte'
 
     useEffect(()=>{
         const suporte = document.getElementById('suporte') as HTMLElement;
@@ -21,7 +21,7 @@ export const Suporte:React.FC = () => {
         <div className={styles.suporte}>
             <Navigation />
             <section>
-                <h1>Ajuda</h1>
+                <h1>Suporte</h1>
                 <h2>Perguntas frequentes</h2>
                 <div className={styles.divpaiajuda}>
                     <div className={styles.duvidas}>
