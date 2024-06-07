@@ -5,7 +5,6 @@
 
     .pontos {
         width: 100%;
- 
 
         header {
             height: 10%;
@@ -14,7 +13,12 @@
             justify-content: center;
             padding: 20px;
             color: var(--third-color);
-            font-size: 24px;
+
+            h1 {
+                color: var(--third-color);
+                text-align: center;
+                font-size: 1.8rem;
+            }
         }
         .firstDiv {
             width: 70%;
@@ -39,31 +43,36 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 15px;
-                
+                padding: 1.2rem 4rem;
 
                 p {
+                    font-size: 0.8rem;
                     padding: 5px;
                     margin-right: 2%;
                 }
             }
 
             .thirdDiv {
+                width: 100%;
                 display: flex;
-                gap: 23%;
+                padding: 0.5rem 3rem;
+                justify-content: space-between;
                 background-color: var(--third-color);
                 color: var(--fourth-color);
-                padding: 10px;
-                margin: 4px 0;
-                width: 100%;
-                font-size: 14px;
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
                 align-items: center;
-                height: 20%;
-                 
 
                 .inf {
-                    
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 0.8rem;  
+                }
+
+                .info{
+                    display: inline-block;
+                    width: 20%;
+                    text-align: center;
+                    font-size: 0.8rem;
                 }
             }
         }

@@ -56,8 +56,11 @@
     }
 
     .arrowicon {
+        margin-bottom: 1.8rem;
         font-size: 35px;
-        margin-bottom: 4%;
+        position: absolute;
+        z-index: 99999;
+        transform: rotateY(180deg);
     }
 
     .arrowicon:hover {
@@ -68,7 +71,7 @@
     input {
         position: absolute;
         top: 22.9%;
-        left: 29.2%;
+        left: 27.5%;
         height: 46px;
         width: 36.8%;
         padding: 10px;
@@ -79,7 +82,7 @@
     button {
         font-size: 0.9rem;
         position: absolute;
-        left: 65.4%;
+        left: 65.5%;
         top: 23.2%;
         font-weight: 500;
         display: flex;
@@ -91,7 +94,7 @@
         height: 1px;
         transition: 0.5s;
         padding: 1.3rem;
-        background-color: var(--third-color);
+        background-color: var(--second-color);
         color: var(--fourth-color);
         cursor: pointer;
 
