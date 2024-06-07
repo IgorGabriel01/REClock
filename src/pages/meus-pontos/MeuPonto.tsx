@@ -34,7 +34,7 @@ export const MeuPonto: React.FC = () => {
             <Navigation />
             <section className={styles.pontos}>
                 <header>
-                    <h2>Meus Pontos</h2>
+                    <h1>Meus Pontos</h1>
                 </header>
                 <div>
                     <Mapa onAddressChange={setEndereco}/>
