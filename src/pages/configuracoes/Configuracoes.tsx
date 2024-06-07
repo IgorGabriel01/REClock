@@ -49,7 +49,6 @@ export const Configuracoes: React.FC = () => {
                         <input type="checkbox" />
                     </div>
                 </div>
-                
             </section>
         </div>
         

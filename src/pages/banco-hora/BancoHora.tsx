@@ -10,9 +10,10 @@ export const BancoHora: React.FC = () => {
     document.title = 'REClock - Banco de horas';
 
     useEffect(()=>{
-        const bancoHoras = document.getElementById('banco-de-horas') as HTMLElement;
+        const bancoHoras = document.getElementById('banco-hora') as HTMLElement;
+        bancoHoras
         bancoHoras.style.opacity = '1';
-    })
+    });
 
     return (
         <div className={styles.bancoHora}>

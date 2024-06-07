@@ -16,7 +16,7 @@
             color: var(--third-color);
             font-size: 24px;
         }
-        .divponto {
+        .firstDiv {
             width: 70%;
             height: 50%;
             top: 50%;
@@ -30,22 +30,7 @@
             overflow-x: hidden;
             position: absolute;
 
-            .ponto {
-                display: flex;
-                gap: 35%;
-                background-color: var(--third-color);
-                color: var(--fourth-color);
-                padding: 10px;
-                margin: 4px 0;
-                width: 100%;
-                font-size: 14px;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                align-items: center;
-                height: 20%;
-                 
-            }
-
-            .divinfo {
+            .secondDiv {
                 background-color: var(--second-color);
                 width: 100%;
                 margin: 4px 0;
@@ -60,6 +45,25 @@
                 p {
                     padding: 5px;
                     margin-right: 2%;
+                }
+            }
+
+            .thirdDiv {
+                display: flex;
+                gap: 23%;
+                background-color: var(--third-color);
+                color: var(--fourth-color);
+                padding: 10px;
+                margin: 4px 0;
+                width: 100%;
+                font-size: 14px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                align-items: center;
+                height: 20%;
+                 
+
+                .inf {
+                    
                 }
             }
         }

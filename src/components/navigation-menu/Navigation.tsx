@@ -19,12 +19,12 @@ import HistoryIcon from '@mui/icons-material/History';
 export const Navigation: React.FC = () => {
 
     const modalData = useContext(DadosContext);
-    const {userData, setUserData} = modalData;
+    const { userData, setUserData } = modalData;
 
-    useEffect(()=>{
-        setUserData({...userData, modalOpen: false});
+    useEffect(() => {
+        setUserData({ ...userData, modalOpen: false });
     }, []);
-    
+
     const data = localStorage.getItem('savedata') as string;
     const parsedData = JSON.parse(data);
 
@@ -34,15 +34,9 @@ export const Navigation: React.FC = () => {
 
     const handleTaskAdded = (count: number) => {
         setTaskCount(count);
-        if (count === 1) {
-            setMessage(`Você tem ${count} tarefa criada`);
-        } else if(count > 1) {
-            setMessage(`Você tem ${count} tarefas criadas`);
-        }
-         else {
-            setMessage('Adicione uma nova tarefa');
-        }
-    };
+        setMessage(
+            count === 0 ? 'Adicione uma nova tarefa' : `Você tem ${count} tarefa ${count > 1 ? 's' : ''} criada${count > 1 ? 's' : ''}`
+        )};
 
     return (
         <div className={styles.navigationContainer}>
@@ -53,46 +47,54 @@ export const Navigation: React.FC = () => {
                         <p>REClock</p>
                     </div>
                     <ul>
-                        <Link className={styles.linkli} to={'/home'}><li id="home" onClick={()=>{
+                        <Link className={styles.linkli} to={'/home'}><li id="home" onClick={() => {
                             const confirm = document.getElementById('confirmacao-main') as HTMLElement;
                             confirm.style.display = 'none';
                         }}> <HomeIcon /> Home</li></Link>
-                        <Link className={styles.linkli} to={'/meus-pontos'}><li id="meus-pontos"> <CalendarMonthIcon /> Meus pontos</li></Link> 
-                        <Link className={styles.linkli} to={'/ajustar-ponto'}><li id="ajustar-pontos"> <EditCalendarIcon /> Ajustar pontos</li></Link> 
-                        <Link className={styles.linkli} to={'/banco-de-horas'}><li id="banco-hora"> <HistoryIcon /> Banco de horas</li></Link> 
+                        <Link className={styles.linkli} to={'/meus-pontos'}><li id="meus-pontos"> <CalendarMonthIcon /> Meus pontos</li></Link>
+                        <Link className={styles.linkli} to={'/ajustar-ponto'}><li id="ajustar-pontos"> <EditCalendarIcon /> Ajustar pontos</li></Link>
+                        <Link className={styles.linkli} to={'/banco-de-horas'}><li id="banco-hora"> <HistoryIcon /> Banco de horas</li></Link>
                     </ul>
                 </div>
                 <div className={styles.addtasks}>
                     <p>Vamos começar</p>
                     <p>Criar ou adicionar novas tarefas não poderia ser mais fácil</p>
                     <div>
-                       <AddTaskOutlinedIcon className={styles.add}/>
-                       <button className={styles.button} type="submit" onClick={() => setOpen(true)}> 
-                       {message}</button> 
+                        <AddTaskOutlinedIcon className={styles.add} />
+                        <button className={styles.button} type="submit" onClick={() => setOpen(true)}>
+                            {message}</button>
+
                     </div>
-                    
-                </div> 
+
+                </div>
                 <ModalTask
-                isOpen={open} 
-                onClose={() => setOpen(false)}
-                onTaskAdded={handleTaskAdded}/>
+                    isOpen={open}
+                    onClose={() => setOpen(false)}
+                    onTaskAdded={handleTaskAdded} />
+
                 <div className={styles.seconddivinfos}>
                     <ul>
-                        <Link className={styles.linkli} to='/notificacoes'> <li id="notificacoes"> <NotificationsIcon /> Notificações</li></Link>
-                        <Link className={styles.linkli} to='/configuracoes'><li id="configuracoes"> <SettingsIcon /> Configurações</li></Link>
-                        <Link className={styles.linkli} to='/suporte'><li id="suporte"><HelpOutlineIcon />Suporte</li></Link> 
+                        <Link className={styles.linkli}
+                            to='/notificacoes'>
+                            <li id="notificacoes"> <NotificationsIcon /> Notificações</li></Link>
+                        <Link className={styles.linkli}
+                            to='/configuracoes'>
+                            <li id="configuracoes"> <SettingsIcon /> Configurações</li></Link>
+                        <Link className={styles.linkli} 
+                        to='/suporte'>
+                            <li id="suporte"><HelpOutlineIcon />Suporte</li></Link>
                     </ul>
                 </div>
-                <div className={styles.infos} onClick={()=>{
+                <div className={styles.infos} onClick={() => {
                     const modificarperfil = document.getElementById('modificarperfil') as HTMLElement;
-                    
+
                     if (userData.modalOpen === false) {
                         modificarperfil.style.display = 'block';
 
-                        setUserData({...userData, modalOpen: true});
+                        setUserData({ ...userData, modalOpen: true });
                     }
 
-                    }}>
+                }}>
                     <img src={Icon} id="foto-perfil" alt="Ícone perfil" />
                     <div className={styles.infosi}>
                         <p id="nomenavigation">{parsedData.nome}</p>
@@ -103,12 +105,12 @@ export const Navigation: React.FC = () => {
                         </div>
                     </div>
                     <Link to={"/"}>
-                        <LogoutIcon className={styles.iconlogout}/>
+                        <LogoutIcon className={styles.iconlogout} />
                     </Link>
                 </div>
             </nav>
-            
-            <ModificarPerfil id="modificarperfil" elementNome={document.getElementById('nomenavigation') as HTMLElement} elementMatricula={document.getElementById('matriculanavigation') as HTMLElement} elementCargo={document.getElementById('cargonavigation') as HTMLElement} urlImg={document.getElementById('foto-perfil')}/>
+
+            <ModificarPerfil id="modificarperfil" elementNome={document.getElementById('nomenavigation') as HTMLElement} elementMatricula={document.getElementById('matriculanavigation') as HTMLElement} elementCargo={document.getElementById('cargonavigation') as HTMLElement} urlImg={document.getElementById('foto-perfil')} />
         </div>
     );
 }

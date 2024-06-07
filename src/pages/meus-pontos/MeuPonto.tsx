@@ -30,7 +30,7 @@ export const MeuPonto: React.FC = () => {
     };
 
     return (
-        <div id="meu-ponto" className={styles.meuspontos}>
+        <div className={styles.meuspontos}>
             <Navigation />
             <section className={styles.pontos}>
                 <header>
@@ -40,15 +40,18 @@ export const MeuPonto: React.FC = () => {
                     <Mapa onAddressChange={setEndereco}/>
                 </div>
                 {pontos.length > 0 ? (
-                    <div className={styles.divponto}>
-                        <div className={styles.divinfo}><p>Data</p>
-                        <p>Horario de início</p>
+                    <div className={styles.firstDiv}>
+                        <div className={styles.secondDiv}><p>Data</p>
+                        <p>Horário de início</p>
+                        <p>Horário de saída</p>
                         <p>Localização</p></div>
                         {pontos.map((ponto, index) => (
-                            <div key={index} className={styles.ponto}>
+                            <div key={index} className={styles.thirdDiv}>
                                 <div className={styles.inf}> {ponto.data}</div>
                                 <div className={styles.inf}>{ponto.horario}</div>
-                                <div className={styles.inf}> {ponto.endereco}</div>
+                                <div className={styles.inf}><p>18:15:03</p></div>
+                                <div className={styles.inf}>{ponto.endereco}</div>
+                                
                             </div>
                         ))}
                     </div>
