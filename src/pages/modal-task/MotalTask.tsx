@@ -20,7 +20,6 @@ interface Todo {
 export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
     const [task, setTask] = useState('');
     const [todoList, setTodoList] = useState<Todo[]>([]);
-    const [taskCountMessage, setTaskCountMessage] = useState('');
     const [completedCount, setCompletedCount] = useState(0)
     const [message, setMessage] = useState('Adicionar uma nova tarefa');
 

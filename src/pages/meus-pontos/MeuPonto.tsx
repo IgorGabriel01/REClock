@@ -9,25 +9,15 @@ export const MeuPonto: React.FC = () => {
     const [pontos, setPontos] = useState<Array<{ endereco: string, data: string, horario: string }>>([]);
     const [endereco, setEndereco] = useState<string>('');
 
+    console.log(endereco);
+
     useEffect(() => {
         const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
         setPontos(savedPoints);
 
         const meuPontoIcon = document.getElementById('meus-pontos') as HTMLElement;
         meuPontoIcon.style.opacity = '1';
-    }, []);
-
-    const handleSavePoint = () => {
-        const novoPonto = {
-            endereco: endereco,
-            data: new Date().toLocaleDateString(),
-            horario: new Date().toLocaleTimeString(),
-        };
-
-        const updatedPoints = [novoPonto, ...pontos];
-        setPontos(updatedPoints);
-        localStorage.setItem('pontos', JSON.stringify(updatedPoints));
-    };
+    }, [])
 
     return (
         <div className={styles.meuspontos}>
