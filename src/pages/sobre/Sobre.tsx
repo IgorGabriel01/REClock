@@ -10,6 +10,9 @@ import styles from "./styles.module.scss";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export const Sobre: React.FC = () => {
+
+    document.title = 'REClock - Sobre nós'
+
     return (
         <main className={styles.sobre}>
             <ArrowBackIcon className={styles.arrow} onClick={() => {

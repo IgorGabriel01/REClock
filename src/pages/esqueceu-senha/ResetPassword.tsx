@@ -87,6 +87,7 @@ export const ResetPassword: React.FC = () => {
                     entradaValueEventTwo(eventElement);
 
                     setFormState({ ...formState, input4: true });
+                    setSenhaState(eventElement.target.value);
                 }
                 break;
             case "confirmasenha":
