@@ -38,9 +38,9 @@ export const MeuPonto: React.FC = () => {
                         <p>Localização</p></div>
                         {pontos.map((ponto, index) => (
                             <div key={index} className={styles.thirdDiv}>
-                                <p className={styles.inf}> {ponto.data}</p>
-                                <p className={styles.inf}>{ponto.horario}</p>
-                                <p className={styles.inf}>18:15:03</p>
+                                <p className={styles.inf    }> {ponto.data}</p>
+                                <p className={styles.info}>{ponto.horario}</p>
+                                <p className={styles.info}>18:15:03</p>
                                 <p className={styles.info}>{ponto.endereco}</p>
                             </div>
                         ))}
