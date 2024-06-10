@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
     const handleTaskAdded = (count: number) => {
         setTaskCount(count);
         setMessage(
-            count === 0 ? 'Adicione uma nova tarefa' : `Você tem ${count} tarefa ${count > 1 ? 's' : ''} criada${count > 1 ? 's' : ''}`
+            count === 0 ? 'Adicione uma nova tarefa' : `Você tem ${count} tarefa${count > 1 ? 's' : ''} criada${count > 1 ? 's' : ''}`
         )};
 
     return (

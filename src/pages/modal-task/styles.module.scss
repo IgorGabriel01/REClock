@@ -71,7 +71,7 @@
     input {
         position: absolute;
         top: 22.9%;
-        left: 27.5%;
+        left: 29.5%;
         height: 46px;
         width: 36.8%;
         padding: 10px;
@@ -105,7 +105,7 @@
     }
 
     button:hover {
-        background-color: var(--second-color);
+        background-color: var(--third-color);
         transition: 0.5s;
     }
 
@@ -124,6 +124,7 @@
         gap: 3px;
         overflow-y: auto;
         
+       
 
         .messageTask {
             font-weight: 600;
@@ -156,6 +157,10 @@
             color: var(--third-color);
             font-size: 20px;
             font-weight: 200;
+
+            &.completed {
+                color: rgb(0, 255, 0); 
+            }
         }
 
         .deleteIcon {
