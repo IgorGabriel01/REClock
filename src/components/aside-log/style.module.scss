@@ -48,5 +48,10 @@
             }
         }
     }
+}
 
+@media screen and (max-width: 920px) {
+    .aside {
+        display: none;
+    }
 }

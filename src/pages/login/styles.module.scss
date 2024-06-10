@@ -4,6 +4,7 @@
 
     .login {
         width: 45%;
+        min-width: 360px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -258,5 +259,16 @@
                 transition: 0.8s;
             }
         }
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .dlogin {
+        width: 100vw;
+    }
+
+    .login {
+        width: 100% !important;
+        height: 100vh;
     }
 }

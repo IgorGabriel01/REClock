@@ -6,6 +6,7 @@
         position: relative;
         width: 45%;
         display: flex;
+        min-width: 360px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -14,8 +15,9 @@
         background-color: var(--third-color);
 
         .arrowicon {
-            font-size: 2rem;
+            font-size: 1.5rem;
             position: absolute;
+            margin-left: 0.5rem;
             right: 90%;
             top: 4%;
             color: var(--fourth-color);
@@ -176,5 +178,16 @@
                 cursor: pointer;
             }
         }
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .dresetpassword {
+        width: 100vw;
+    }
+
+    .resetpassword {
+        width: 100% !important;
+        height: 100vh;
     }
 }
