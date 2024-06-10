@@ -55,7 +55,7 @@ export const Login: React.FC = () => {
         switch (eventElement.target.id) {
             case "matricula":
                 if (eventElement.target.value !== dadosUsuarios.userData.matricula) {
-                    entradaValueEventOne(eventElement, 'Matrícula incorreta');
+                    entradaValueEventOne(eventElement, 'Matrícula não encontrada');
                     setFormState({ ...formState, input1: false });
                 } else {
                     entradaValueEventTwo(eventElement);

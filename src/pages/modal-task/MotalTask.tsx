@@ -1,6 +1,7 @@
 import ForwardSharpIcon from '@mui/icons-material/ForwardSharp';
 import DeleteIcon from '@mui/icons-material/Delete';
 import RadioButtonUncheckedOutlinedIcon from '@mui/icons-material/RadioButtonUncheckedOutlined';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import styles from './styles.module.scss';
 import { FormEvent, useState, useEffect } from 'react';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
@@ -33,8 +34,6 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
         setCompletedCount(completedTasks);
         onTaskAdded(todoList.length);
     }, [todoList, onTaskAdded]);
-
-    
 
     function handlerAddTodoList(event: FormEvent) {
         event.preventDefault();
@@ -83,11 +82,19 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
                             key={index}
                             className={`${styles.taskDetail} ${todo.completed ? styles.completed : ''}`}
                         >
-                            <RadioButtonUncheckedOutlinedIcon
-                                className={styles.checkIcon}
-                                fontSize="small" // Ajusta o tamanho do ícone
-                                onClick={() => toggleTodoCompleted(index)}
-                            />
+                            {todo.completed ? (
+                                <CheckCircleOutlineIcon
+                                    className={styles.checkIcon}
+                                    fontSize="small"
+                                    onClick={() => toggleTodoCompleted(index)}
+                                />
+                            ) : (
+                                <RadioButtonUncheckedOutlinedIcon
+                                    className={styles.checkIcon}
+                                    fontSize="small"
+                                    onClick={() => toggleTodoCompleted(index)}
+                                />
+                            )}
                             <span className={styles.taskText} onClick={() => toggleTodoCompleted(index)}>
                                 {todo.text}
                             </span>
