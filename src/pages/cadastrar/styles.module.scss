@@ -6,7 +6,7 @@
         position: relative;
         width: 45%;
         display: flex;
-        min-width: 360px;
+        min-width: 240px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -129,7 +129,7 @@
                 }
 
                 ::placeholder {
-                    color: #476c7c;
+                    color: #2F4752;
                 }
             }
 
@@ -214,10 +214,11 @@
 @media screen and (max-width: 920px) {
     .dcadastrar {
         width: 100vw;
+        height: 100vh;
     }
 
     .cadastrar {
         width: 100% !important;
-        height: 100vh;
+        height: 100% !important;
     }
 }

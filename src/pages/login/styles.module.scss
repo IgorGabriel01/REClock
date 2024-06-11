@@ -4,7 +4,7 @@
 
     .login {
         width: 45%;
-        min-width: 360px;
+        min-width: 240px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -158,13 +158,13 @@
                 }
 
                 .firstlink:hover {
-                    color: var(--second-color);
-                    transition: 0.8s;
+                    opacity: 0.6;
+                    transition: 0.5s;
                 }
 
                 p:hover {
-                    color: var(--second-color);
-                    transition: 0.8s;
+                    opacity: 0.6;
+                    transition: 0.5s;
                 }
             }
 
@@ -229,7 +229,7 @@
 
             :first-child:hover,
             :last-child:hover {
-                color: var(--second-color);
+                opacity: 0.6;
                 transition: 0.8s;
             }
         }
@@ -245,7 +245,7 @@
             }
 
             span:hover {
-                color: var(--second-color);
+                opacity: 0.6;
                 transition: 0.8s;
             }
 
@@ -255,7 +255,7 @@
             }
 
             .secondlink:hover {
-                color: var(--second-color);
+                opacity: 0.6;
                 transition: 0.8s;
             }
         }

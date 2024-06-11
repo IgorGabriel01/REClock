@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
     document.title = 'REClock - Bata seu ponto!'
 
     return (
-        <>
+        <div className={styles.home}>
             <header className={styles.header}>
                 <img src={Logo} alt="Logo REClock" />
 
@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
                 <section id="funcionalidades" className={styles.funcionalidades}>
 
                     <div className={styles.firstdiv}>
-                        <div>
+                        <div className={styles.funcdiv}>
                             <h3>
                                 O melhor aplicativo de bater ponto
                             </h3>
@@ -65,7 +65,7 @@ export const Home: React.FC = () => {
                             </div>
                             <img src={CellphoneIlustrationU} alt="Ilustração celular" />
                         </div>
-                        <div>
+                        <div className={styles.funcdiv}>
                             <h3>
                                 Listagem de Datas
                             </h3>
@@ -104,32 +104,35 @@ export const Home: React.FC = () => {
                 <section>
                     <img src={Logo} alt="Logo REClock rodapé" />
 
-                    <div>
-                        <h4>PRODUTO</h4>
-                        <ul>
-                            <li><a href="#funcionalidades">Funcionalidades</a></li>
-                        </ul>
-                    </div>
+                    <div className={styles.dfooter}>
+                        <div>
+                            <h4>PRODUTO</h4>
+                            <ul>
+                                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                            </ul>
+                        </div>
 
-                    <div>
-                        <h4>EMPRESA</h4>
-                        <ul>
-                            <Link className={styles.li} to={'./sobre'}><li>Sobre nós</li></Link> 
-                        </ul>
-                    </div>
+                        <div>
+                            <h4>EMPRESA</h4>
+                            <ul>
+                                <Link className={styles.li} to={'./sobre'}><li>Sobre nós</li></Link> 
+                            </ul>
+                        </div>
 
-                    <div>
-                        <h4>LEGAL</h4>
-                        <ul>
-                            <Link className={styles.li} to={'./termos-privacidade'}><li>Termos de uso</li></Link>
-                            <Link className={styles.li} to={'./termos-privacidade'}><li>Política de privacidade</li></Link>
-                        </ul>
+                        <div>
+                            <h4>LEGAL</h4>
+                            <ul>
+                                <Link className={styles.li} to={'./termos-privacidade'}><li>Termos de uso</li></Link>
+                                <Link className={styles.li} to={'./termos-privacidade'}><li>Política de privacidade</li></Link>
+                            </ul>
+                        </div>
                     </div>
+                    
                 </section>
 
                 <p>©2024 REClock</p>
 
             </footer>
-        </>
+        </div>
     )
 }
