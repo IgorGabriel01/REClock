@@ -39,6 +39,8 @@ export const Navigation: React.FC = () => {
 
     const [navigationOpen, setNavigationOpen] = useState(false); 
 
+    console.log(taskCount);
+
     const handleTaskAdded = (count: number) => {
         setTaskCount(count);
         setMessage(
