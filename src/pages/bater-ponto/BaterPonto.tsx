@@ -45,7 +45,7 @@ export const BaterPonto: React.FC = ()=>{
         if (webcamRef.current) {
             const screenshot = webcamRef.current.getScreenshot();
             if (screenshot) {
-                // Save the screenshot in localStorage or send it to the server here
+                
 
                 const dataParsed = JSON.parse(horario);
                 dataParsed.horario = `${hora}:${minutos}:${segundos}`;
@@ -56,17 +56,17 @@ export const BaterPonto: React.FC = ()=>{
                 localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
                 localStorage.setItem('savedata', JSON.stringify(dataParsed));
 
-                // Save point data to localStorage
+               
                 const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
                 savedPoints.push({
                     endereco: endereco,
                     data: dataParsed.data,
                     horario: dataParsed.horario,
-                    screenshot: screenshot  // Save the screenshot
+                    screenshot: screenshot  
                 });
                 localStorage.setItem('pontos', JSON.stringify(savedPoints));
 
-                // Redirect to home page
+               
                 navigate('/home');
             }
         }

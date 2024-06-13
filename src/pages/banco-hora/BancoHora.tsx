@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import img from '../../assets/img/Group 2.png';
+import img1 from '../../assets/img/Group 2.png';
 import img2 from '../../assets/img/Group 2758.png';
 import img3 from '../../assets/img/atual.png';
 import img4 from '../../assets/img/frame.png';
@@ -34,10 +34,10 @@ export const BancoHora: React.FC = () => {
                     </div>
 
                     <div className={styles.saldoTotal}>
-                        <h1>Salto total de horas</h1>
+                        <h1>Saldo total de horas</h1>
                         <img 
-                        src={img} 
-                        alt=""/>
+                        src={img1} 
+                        alt="" className={styles.img1}/>
                     </div>
                 </div>
 

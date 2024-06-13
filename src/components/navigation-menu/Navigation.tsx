@@ -32,7 +32,7 @@ export const Navigation: React.FC = () => {
     const [taskCount, setTaskCount] = useState<number>(0);
     const [message, setMessage] = useState('Adicionar uma nova tarefa');
 
-    console.log(taskCount);
+    //console.log(taskCount);
 
     const handleTaskAdded = (count: number) => {
         setTaskCount(count);
