@@ -29,15 +29,12 @@
             font-weight: 500;
             display: flex;
         }
+        
         .completedCountMessage {
-            position: absolute;
-            top: 37.3%;
-            right: 28%;
             font-size: 14px;
             color:var(--sixth-color);
             font-weight: 600;
         }
-
      
     }
 
@@ -140,12 +137,13 @@
             justify-content: space-between;
             position: relative;
             border: solid 2px var(--third-color);
+
+           
         }
 
         .completed {
             text-decoration: line-through;
-            opacity: 0.8;
-           
+            opacity: 0.8;          
         }
 
         .checkIcon {

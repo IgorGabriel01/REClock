@@ -75,7 +75,11 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
                 />
                 <button type="submit">Criar<AddCircleOutlineOutlinedIcon className={styles.add}/> </button>
                 <div className={styles.tasks}>
-                    <p className={styles.messageTask}>{message}</p>
+                <div className={styles.divMenssage}>
+                     <p className={styles.messageTask}>{message}</p> 
+                    <p className={styles.completedCountMessage}>Concluídas: {completedCount}</p>
+                </div>
+                   
                     
                     {todoList.map((todo, index) => (
                         <div
@@ -103,7 +107,9 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
                                 onClick={() => deleteTodo(index)}
                             />
                         </div>
+                        
                     ))}
+                   
                 </div>
                 <span className={styles.completedCountMessage}>Concluídas: {completedCount}</span>
             </form>
