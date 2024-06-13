@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import styles from "./styles.module.scss";
 import Mapa from "../../services/api-maps/Mapa";
+import Webcam from "react-webcam";
 
 export const BaterPonto: React.FC = ()=>{
 
     document.title = 'REClock - Bater ponto'
     
+    const navigate = useNavigate();
+    const webcamRef = useRef<Webcam>(null);
+
     const dataHoraAtual = new Date();
-
     const [horario] = useState(localStorage.getItem('savedata') as string);
-
     const [hora, setHora] = useState('');
     const [minutos, setMinutos] = useState('');
     const [segundos, setSegundos] = useState('');
     const [endereco, setEndereco] = useState<string>('');
+    const [showWebcam, setShowWebcam] = useState(false);
+
     
     useEffect(() => {
         const interval = setInterval(() => {
@@ -34,28 +38,42 @@ export const BaterPonto: React.FC = ()=>{
     }, []);
 
     const handleBaterPonto = () => {
-        const dataParsed = JSON.parse(horario);
-
-        dataParsed.horario = `${hora}:${minutos}:${segundos}`;
-        dataParsed.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
-        dataParsed.endereco = endereco;
-        dataParsed.pontoBatido = true;
-
-        localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
-        localStorage.setItem('savedata', JSON.stringify(dataParsed));
-
-        // Save point data to localStorage
-        const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
-        savedPoints.push({
-            endereco: endereco,
-            data: dataParsed.data,
-            horario: dataParsed.horario
-        });
-        localStorage.setItem('pontos', JSON.stringify(savedPoints));
+        setShowWebcam(true);
     };
 
+    const handleCapture = () => {
+        if (webcamRef.current) {
+            const screenshot = webcamRef.current.getScreenshot();
+            if (screenshot) {
+                // Save the screenshot in localStorage or send it to the server here
+
+                const dataParsed = JSON.parse(horario);
+                dataParsed.horario = `${hora}:${minutos}:${segundos}`;
+                dataParsed.data = `${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`;
+                dataParsed.endereco = endereco;
+                dataParsed.pontoBatido = true;
+
+                localStorage.setItem('pontoBatido', JSON.stringify(dataParsed));
+                localStorage.setItem('savedata', JSON.stringify(dataParsed));
+
+                // Save point data to localStorage
+                const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
+                savedPoints.push({
+                    endereco: endereco,
+                    data: dataParsed.data,
+                    horario: dataParsed.horario,
+                    screenshot: screenshot  // Save the screenshot
+                });
+                localStorage.setItem('pontos', JSON.stringify(savedPoints));
+
+                // Redirect to home page
+                navigate('/home');
+            }
+        }
+    };
     return(
         <section className={styles.baterponto}>
+            
             <header>
                 <div onClick={()=>{
                         const dataParsed = JSON.parse(horario);
@@ -85,6 +103,16 @@ export const BaterPonto: React.FC = ()=>{
             </main>
             <div 
             className={styles.dinfos}>
+                 {showWebcam && (
+                    <div className={styles.webcamContainer}>
+                        <Webcam
+                            audio={false}
+                            ref={webcamRef}
+                            screenshotFormat="image/jpeg"
+                        />
+                        <button onClick={handleCapture} className={styles.capture}>Capture</button>
+                    </div>
+                )}
                 
                 <div 
                 className={styles.infos}>
@@ -104,9 +132,9 @@ export const BaterPonto: React.FC = ()=>{
                         {`DATA: ${(dataHoraAtual.getDate() < 10) ? '0' + dataHoraAtual.getDate() : dataHoraAtual.getDate()}/${(dataHoraAtual.getMonth() + 1 < 10) ? '0' + (dataHoraAtual.getMonth() + 1) : dataHoraAtual.getMonth() + 1}/${dataHoraAtual.getFullYear()}`}
                     </div>
                 </div>   
-                <Link className={styles.secondlink} to={'/home'}>
+                
                 <button onClick={handleBaterPonto}>Bater ponto</button>
-                </Link>
+               
             </div> 
         </section>
     )
