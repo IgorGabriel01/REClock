@@ -17,13 +17,15 @@ export const Integrante:React.FC<PropsIntegrante> = (props) => {
         <div className={styles.integrante}>
             <img src={props.img} alt="Foto perfil" />
 
-            <h2>{props.nome}</h2>
+            <div className={styles.dinfos}>
+                <h2>{props.nome}</h2>
 
-            <p className={styles.descricao}>{props.descricao}</p>
+                <p className={styles.descricao}>{props.descricao}</p>
 
-            <div>
-                <a target="blank" href={props.links.linkedin}><LinkedInIcon /></a>
-                <a target="blank" href={props.links.github}><GitHubIcon /></a>
+                <div>
+                    <a target="blank" href={props.links.linkedin}><LinkedInIcon /></a>
+                    <a target="blank" href={props.links.github}><GitHubIcon /></a>
+                </div>
             </div>
         </div>
     )

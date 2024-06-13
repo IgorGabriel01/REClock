@@ -145,9 +145,11 @@
     
                     span {
                         opacity: 0;
-                        color: #ff0000;
-                        font-size: 0.7rem;
+                        font-size: 0.6rem;
                         font-weight: 450;
+                        background-color: #882C2F;
+                        color: #fff;
+                        padding: 0.2rem 0.5rem;
                         margin-top: 0.2rem;
                         transition: 0.8s;
                     }

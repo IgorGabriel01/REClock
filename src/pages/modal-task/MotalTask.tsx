@@ -1,4 +1,4 @@
-import ForwardSharpIcon from '@mui/icons-material/ForwardSharp';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import RadioButtonUncheckedOutlinedIcon from '@mui/icons-material/RadioButtonUncheckedOutlined';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -64,7 +64,7 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
             <form className={styles.modalTask} onSubmit={handlerAddTodoList}>
                 <div className={styles.headerTask}>
                     <h1>Minhas tarefas</h1>
-                    <ForwardSharpIcon className={styles.arrowicon} onClick={onClose} />
+                    <ArrowBackIcon className={styles.arrowicon} onClick={onClose} />
                 </div>
 
                 <input

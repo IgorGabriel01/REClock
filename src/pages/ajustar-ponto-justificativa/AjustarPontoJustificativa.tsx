@@ -106,8 +106,8 @@ export const AjustarPontoJustificativa:React.FC = () => {
 
                             <select name="valor-input-horario" id="valor-input-horario">
                                 <option value={`${dia}/${mes}/${ano}`}>{`${dia}/${mes}/${ano}`}</option>
-                                <option value={`${'0' + (horarioData.getDate() - 1)}/${mes}/${ano}`}>{`${'0' + (horarioData.getDate() - 1)}/${mes}/${ano}`}</option>
-                                <option value={`${'0' + (horarioData.getDate() - 2)}/${mes}/${ano}`}>{`${'0' + (horarioData.getDate() - 2)}/${mes}/${ano}`}</option>
+                                <option value={`${horarioData.getDate() - 1}/${mes}/${ano}`}>{`${horarioData.getDate() - 1}/${mes}/${ano}`}</option>
+                                <option value={`${horarioData.getDate() - 2}/${mes}/${ano}`}>{`${horarioData.getDate() - 2}/${mes}/${ano}`}</option>
                             </select>
 
                             <h3>Anexe aqui o seu atestado ou protocolo:</h3>

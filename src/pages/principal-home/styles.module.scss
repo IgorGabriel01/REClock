@@ -4,7 +4,7 @@
 
     .maincontenthome {
         background-color: var(--fourth-color);
-        width: 80vw;
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -81,6 +81,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    .home {
+        .maincontenthome {
+            
         }
     }
 }

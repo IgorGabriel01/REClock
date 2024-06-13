@@ -29,6 +29,12 @@
             .arrowlink {
                 color: var(--third-color);
                 font-size: 2rem;
+                transition: 0.8s;
+            }
+
+            .arrowlink:hover {
+                opacity: 0.6;
+                transition: 0.8s;
             }
         }
 
