@@ -9,7 +9,7 @@ export const MeuPonto: React.FC = () => {
     const [pontos, setPontos] = useState<Array<{ endereco: string, data: string, horario: string }>>([]);
     const [endereco, setEndereco] = useState<string>('');
 
-    console.log(endereco);
+    //console.log(endereco);
 
     useEffect(() => {
         const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
@@ -38,7 +38,7 @@ export const MeuPonto: React.FC = () => {
                         <p>Localização</p></div>
                         {pontos.map((ponto, index) => (
                             <div key={index} className={styles.thirdDiv}>
-                                <p className={styles.inf    }> {ponto.data}</p>
+                                <p className={styles.inf}> {ponto.data}</p>
                                 <p className={styles.info}>{ponto.horario}</p>
                                 <p className={styles.info}>18:15:03</p>
                                 <p className={styles.info}>{ponto.endereco}</p>
