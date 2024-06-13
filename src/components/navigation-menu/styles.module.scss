@@ -1,31 +1,52 @@
 .navigation {
+    position: absolute;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    width: 20vw;
+    width: 2%;
     gap: 1.6rem;
     padding: 1.5rem 1rem;
     background-color: var(--third-color);
     color: var(--fourth-color);
+    transition: 0.5s;
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
   
+    .navigationopenicon {
+      position:absolute;
+      z-index: 3;
+      transform: rotateY(360deg);
+      font-size: 1.5vw;
+      background-color: var(--third-color);
+      color: var(--fourth-color);
+      cursor: pointer;
+      transition: 0.8s;
+      right: 8%;
+      top: 4%;
+      transition: 0.5s;
+    }
+
     .firstdivinfos {
-      div {
+      display: none;
+
+      .dfirst {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         margin-bottom: 1.5rem;
-  
-        img {
-          width: 2rem;
-        }
-  
-        p {
-          font-size: 1.5rem !important;
-          font-weight: 750;
-        }
+
+          img {
+            width: 2vw;
+          }
+    
+          p {
+            font-size: 1.6vw !important;
+            font-weight: 750;
+            align-self: flex-end;
+          }
       }
-  
+
       ul {
         display: flex;
         flex-direction: column;
@@ -55,6 +76,7 @@
     }
   
     .addtasks {
+      display: flex;
       opacity: 0.9;
       margin: 0 auto;
       padding: 1rem;
@@ -73,45 +95,38 @@
       p:first-child {
         font-weight: 800;
         opacity: 1 !important;
-        font-size: 0.8rem;
+        font-size: 0.8vw;
       }
   
       p {
-        font-size: 0.6rem;
+        font-size: 0.7vw;
         text-align: center;
         opacity: 0.6;
       }
   
-      div {
-        font-size: 0.6rem;
-        display: flex;
-        padding: 0.2rem 0.5rem;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-        border-radius: 1rem;
-        color: var(--third-color);
+      button {
         background-color: var(--fourth-color);
-        font-weight: 500;
-        border-radius: 8px;
-        
-        button {
-          background-color: var(--fourth-color);
-          height: 30px;
-          border: none;
-          color: var(--third-color);
-          font-weight: 600;
-          transition: 0.5s;
-          font-size: 0.8rem;
-        }
-        button:hover {
-          opacity: 0.7;
-          transition: 0.5s;
-          cursor: pointer;
+        height: 100%;
+        border: none;
+        color: var(--third-color);
+        font-weight: 600;
+        transition: 0.5s;
+        font-size: 0.8vw;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.4rem 0.5rem;
       }
 
+      button:hover {
+        opacity: 0.7;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      
       .add {
-        font-size: 20px;
+        font-size: 1.5vw;
         margin-right: 4%;
         transition: 0.5s;
       }
@@ -121,6 +136,7 @@
         transition: 0.5s;
         cursor: pointer;
     }
+  }
 
         p:first-child {
           font-size: 2rem;
@@ -133,16 +149,9 @@
           opacity: 1 !important;
         }
       }
-    }
-  
-    :hover {
-      opacity: 1;
-      cursor: pointer;
-      transition: 0.5s;
-    }
   
     .seconddivinfos {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 0.5rem;
   
@@ -170,26 +179,25 @@
             opacity: 1;
             transition: 0.5s;
           }
-        }
-  
-        
+        }     
       }
     }
   
     .infos {
-      display: flex;
+      cursor: pointer;
+      display: none;
       align-items: center;
       justify-content: space-between;
       background-color: var(--second-color);
       font-size: 0.8rem;
-      padding: 1rem;
+      padding: 1rem 0.8rem;
       border-radius: 1rem;
       opacity: 0.9;
       transition: 0.5s;
       text-decoration: none;
   
       img {
-        width: 2.5rem;
+        width: 15%;
         border-radius: 10rem;
       }
   
@@ -200,7 +208,7 @@
         gap: 0.8rem;
   
         p {
-          font-size: 0.65rem;
+          font-size: 0.7vw;
           font-weight: 700;
           text-align: center;
           color: var(--fourth-color);
@@ -211,13 +219,14 @@
           gap: 0.3rem;
           
           p {
-            font-size: 0.6rem;
+            font-size: 0.65vw;
             text-decoration: none;
           }
         }
       }
   
       .iconlogout {
+        width: 90%;
         transition: 0.8s;
         color: var(--fourth-color);
       }
@@ -226,9 +235,33 @@
         color: var(--third-color);
         transition: 0.8s;
       }
-
-      
-    }
-    
   }
+
+  .navigationclosed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 20vw;
+    gap: 1.6rem;
+    padding: 1.5rem 1rem;
+    background-color: var(--third-color);
+    color: var(--fourth-color);
+    transition: 0.5s;
   
+    .firstdivinfos {
+      display: none;
+    }
+  
+    .addtasks {
+      display: none;
+    }
+  
+    .seconddivinfos {
+      display: none;
+    }
+  
+    .infos {
+      display: none;
+    } 
+  }

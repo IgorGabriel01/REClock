@@ -79,7 +79,7 @@ export const CreateAccount: React.FC = () => {
                 break;
             case "email":
                 if (!eventElement.target.value.includes("@") || !eventElement.target.value.includes(".com")) {
-                    entradaValueEventOne(eventElement, 'Digite um e-mail válido');
+                    entradaValueEventOne(eventElement, `Digite um e-mail válido`);
                     setFormState({ ...formState, input3: false });
                 } else {
                     entradaValueEventTwo(eventElement);

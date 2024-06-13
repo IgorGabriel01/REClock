@@ -15,6 +15,7 @@ import { DadosContext } from "../../services/ContextProvider";
 import { ModalTask } from "../../pages/modal-task/MotalTask";
 import { Link } from "react-router-dom";
 import HistoryIcon from '@mui/icons-material/History';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
 export const Navigation: React.FC = () => {
 
@@ -23,6 +24,10 @@ export const Navigation: React.FC = () => {
 
     useEffect(() => {
         setUserData({ ...userData, modalOpen: false });
+
+        const second = document.getElementById('secondElement') as HTMLElement;
+        console.log('');
+        second.style.display = 'none';
     }, []);
 
     const data = localStorage.getItem('savedata') as string;
@@ -32,7 +37,7 @@ export const Navigation: React.FC = () => {
     const [taskCount, setTaskCount] = useState<number>(0);
     const [message, setMessage] = useState('Adicionar uma nova tarefa');
 
-    //console.log(taskCount);
+    const [navigationOpen, setNavigationOpen] = useState(false); 
 
     const handleTaskAdded = (count: number) => {
         setTaskCount(count);
@@ -42,9 +47,38 @@ export const Navigation: React.FC = () => {
 
     return (
         <div className={styles.navigationContainer}>
-            <nav className={styles.navigation}>
-                <div className={styles.firstdivinfos}>
-                    <div>
+            <nav className={styles.navigation} id="navigation">
+                <div className={styles.navigationopenicon} onClick={()=>{
+                        const icon = document.getElementById('icon') as HTMLElement;
+                        const firstElement = document.getElementById('firstElement') as HTMLElement;
+                        const secondElement = document.getElementById('secondElement') as HTMLElement;
+                        const thirdElement = document.getElementById('thirdElement') as HTMLElement;
+                        const fourthElement = document.getElementById('fourthElement') as HTMLElement;
+                        const navigation = document.getElementById('navigation') as HTMLElement;
+
+                        if (navigationOpen === false) {
+                            firstElement.style.display = 'block';
+                            secondElement.style.display = 'flex';
+                            thirdElement.style.display = 'block';
+                            fourthElement.style.display = 'flex';
+                            navigation.style.width = '25%';
+                            icon.style.transform = 'rotateY(180deg)';
+                            setNavigationOpen(true);
+                        } else {
+                            firstElement.style.display = 'none';
+                            secondElement.style.display = 'none';
+                            thirdElement.style.display = 'none';
+                            fourthElement.style.display = 'none';
+                            navigation.style.width = '2%';
+                            icon.style.transform = 'rotateY(360deg)';
+                            setNavigationOpen(false);
+                        }
+
+                        }}>
+                        <MenuOpenIcon id='icon'/>
+                    </div>
+                <div className={styles.firstdivinfos} id="firstElement">
+                    <div className={styles.dfirst}>
                         <img src={Img} alt="Logo REClock" />
                         <p>REClock</p>
                     </div>
@@ -58,23 +92,20 @@ export const Navigation: React.FC = () => {
                         <Link className={styles.linkli} to={'/banco-de-horas'}><li id="banco-hora"> <HistoryIcon /> Banco de horas</li></Link>
                     </ul>
                 </div>
-                <div className={styles.addtasks}>
+                <div className={styles.addtasks} id="secondElement">
                     <p>Vamos começar</p>
                     <p>Criar ou adicionar novas tarefas não poderia ser mais fácil</p>
-                    <div>
+                    <button className={styles.button} type="submit" onClick={() => setOpen(true)}>
                         <AddTaskOutlinedIcon className={styles.add} />
-                        <button className={styles.button} type="submit" onClick={() => setOpen(true)}>
-                            {message}</button>
-
-                    </div>
-
+                        {message}
+                    </button>
                 </div>
                 <ModalTask
                     isOpen={open}
                     onClose={() => setOpen(false)}
                     onTaskAdded={handleTaskAdded} />
 
-                <div className={styles.seconddivinfos}>
+                <div className={styles.seconddivinfos} id="thirdElement">
                     <ul>
                         <Link className={styles.linkli}
                             to='/notificacoes'>
@@ -87,7 +118,7 @@ export const Navigation: React.FC = () => {
                             <li id="suporte"><HelpOutlineIcon />Suporte</li></Link>
                     </ul>
                 </div>
-                <div className={styles.infos} onClick={() => {
+                <div className={styles.infos} id="fourthElement" onClick={() => {
                     const modificarperfil = document.getElementById('modificarperfil') as HTMLElement;
 
                     if (userData.modalOpen === false) {

@@ -65,8 +65,7 @@
     main {
         width: 100%;
         height: 85%;
-        background-color: aqua;
-        /*Ilustrativo para mostrar o tamanho do main, retirar assim que possível*/
+        background-color: var(--third-color);
     }
 
     .dinfos {

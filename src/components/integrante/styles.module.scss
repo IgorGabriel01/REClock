@@ -5,7 +5,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     padding: 1rem;
     background-color: var(--second-color);
     border-radius: 0.5rem;
@@ -21,34 +20,43 @@
         border: 1px solid var(--fourth-color);
     }
     
-    h2 {
-        color: var(--fourth-color);
-        font-size: 1.2rem;
-        font-weight: 450;
-    }
-
-    p {
-        text-align: center;
-        font-weight: 150;
-        font-size: 0.6rem;
-        font-weight: 200;
-
-    }
-
-    div {
+    .dinfos {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        width: 40%;
+        height: 60%;
 
-        a {
+        h2 {
+            text-align: center;
             color: var(--fourth-color);
-            transition: 0.8s;
+            font-size: 1.2rem;
+            font-weight: 450;
         }
-
-        a:hover {
-            color: var(--third-color);
-            transition: 0.8s;
+    
+        p {
+            text-align: center;
+            font-weight: 150;
+            font-size: 0.6rem;
+            font-weight: 200;
+    
+        }
+    
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 45%;
+    
+            a {
+                color: var(--fourth-color);
+                transition: 0.8s;
+            }
+    
+            a:hover {
+                color: var(--third-color);
+                transition: 0.8s;
+            }
         }
     }
 }
@@ -59,3 +67,69 @@
     transition: 0.8s;
 }
 
+@media screen and (max-width: 1120px) {
+    .integrante {
+        height: 9rem;
+        width: 48%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 0.5rem;
+
+        img {
+            width: 20%;
+        }
+
+        .dinfos {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.5rem;
+            }
+
+            div {
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .integrante {
+        .dinfos {
+            h2 {
+                font-size: 0.8rem;
+            }
+    
+            p {
+                font-size: 0.42rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .integrante {
+        width: 100%;
+
+        .dinfos {
+            h2 {
+                font-size: 0.9rem;
+            }
+    
+            p {
+                font-size: 0.5rem;
+            }
+        }
+    }
+}
