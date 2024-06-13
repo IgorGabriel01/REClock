@@ -106,7 +106,6 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
                     ))}
                 </div>
                 <span className={styles.completedCountMessage}>Concluídas: {completedCount}</span>
-                
             </form>
         </div>
     );

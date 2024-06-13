@@ -16,7 +16,7 @@
     .navigationopenicon {
       position:absolute;
       z-index: 3;
-      transform: rotateY(360deg);
+      transform: rotateY(180deg);
       font-size: 1.5vw;
       background-color: var(--third-color);
       color: var(--fourth-color);
@@ -25,6 +25,7 @@
       right: 8%;
       top: 4%;
       transition: 0.5s;
+      margin-right: 0.2rem;
     }
 
     .firstdivinfos {

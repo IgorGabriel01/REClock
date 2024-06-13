@@ -9,8 +9,6 @@ export const MeuPonto: React.FC = () => {
     const [pontos, setPontos] = useState<Array<{ endereco: string, data: string, horario: string }>>([]);
     const [endereco, setEndereco] = useState<string>('');
 
-    //console.log(endereco);
-
     useEffect(() => {
         const savedPoints = JSON.parse(localStorage.getItem('pontos') || '[]');
         setPontos(savedPoints);
