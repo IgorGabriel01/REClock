@@ -106,6 +106,7 @@ export const BaterPonto: React.FC = ()=>{
                  {showWebcam && (
                     <div className={styles.webcamContainer}>
                         <Webcam
+                            className={styles.cam}
                             audio={false}
                             ref={webcamRef}
                             screenshotFormat="image/jpeg"

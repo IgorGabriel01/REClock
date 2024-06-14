@@ -5,6 +5,7 @@
     display: flex;
 
     section {
+        margin-left: 1rem;
         width: 100vw;
         display: flex;
         gap: 2.2rem;
@@ -39,13 +40,13 @@
         }
 
         .divp {
-            width: 100%;
+            width: 100vw;
             display: flex;
             align-items: center;
             justify-content: center;
 
             .sectionjustificativa {
-                width: 70%;
+                width: 80%;
                 padding: 1.4rem 2rem;
                 background-color: var(--third-color);
                 display: flex;
@@ -160,5 +161,30 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .ajustarpontojustificativa {
+        section {
+            header {
+                width: 80%;
+                h1 {
+                    text-align: center;
+                }
+            }
+
+            .divp {
+                .sectionjustificativa {
+                    .inputfile {
+                        span {
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+            }
+
+            
+        } 
     }
 }

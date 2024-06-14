@@ -30,28 +30,37 @@
         }
     }
 
-    button {
-        font-size: 0.9rem;
-        font-weight: 700;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem auto;
-        width: 60%;
-        border: none;
-        border-radius: 3rem;
-        height: 2rem;
-        transition: 0.5s;
-        padding: 1.2rem;
-        background-color: var(--second-color);
+    .login {
+        text-decoration: none;
+    
+        button {
+            font-weight: 400;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem auto;
+            width: 60%;
+            border: none;
+            border-radius: 3rem;
+            height: 2rem;
+            transition: 0.5s;
+            padding: 1.2rem;
+            background-color: var(--second-color);
+        }
+        
+        button:hover {
+            opacity: 0.7;
+            transition: 0.5s;
+            cursor: pointer;
+        }
     }
+    
 }
 
-button:hover {
-    opacity: 0.7;
-    transition: 0.5s;
-    cursor: pointer;
-}
+
 
     .paragraph {
         font-size: 20px;
@@ -59,9 +68,12 @@ button:hover {
         margin-top: 3%;
     }
 
-    .login {
-        color: white;
-        text-decoration: none;
-        font-weight: 400;
-    }
+    
 
+@media screen and (max-width: 520px){
+    .modalOverlay {
+        .modal {
+            width: 80%;
+        }
+    }
+}

@@ -57,21 +57,27 @@ export const Navigation: React.FC = () => {
                         const thirdElement = document.getElementById('thirdElement') as HTMLElement;
                         const fourthElement = document.getElementById('fourthElement') as HTMLElement;
                         const navigation = document.getElementById('navigation') as HTMLElement;
+                        const larguraTela = window.innerWidth;
 
                         if (navigationOpen === false) {
                             firstElement.style.display = 'block';
                             secondElement.style.display = 'flex';
                             thirdElement.style.display = 'block';
                             fourthElement.style.display = 'flex';
-                            navigation.style.width = '25%';
                             icon.style.transform = 'rotateY(180deg)';
                             setNavigationOpen(true);
+
+                            if(larguraTela > 640) {
+                                navigation.style.width = '20vw';
+                            } else {
+                                navigation.style.width = '50vw';
+                            }
                         } else {
                             firstElement.style.display = 'none';
                             secondElement.style.display = 'none';
                             thirdElement.style.display = 'none';
                             fourthElement.style.display = 'none';
-                            navigation.style.width = '2%';
+                            navigation.style.width = '2vw';
                             icon.style.transform = 'rotateY(360deg)';
                             setNavigationOpen(false);
                         }

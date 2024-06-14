@@ -266,3 +266,62 @@
       display: none;
     } 
   }
+
+  @media screen and (max-width: 520px) { 
+    .navigation {
+      .firstdivinfos{
+        .dfirst {
+          margin-bottom: 4rem;
+
+          img {
+            width: 5vw;
+          }
+
+          p {
+            font-size: 3.5vw !important;
+            font-weight: 750;
+            align-self: flex-end;
+          }
+        }
+      }
+
+      .addtasks {
+        width: 100%;
+        padding: 1rem;
+
+        p:first-child {
+          font-weight: 800;
+          font-size: 2.8vw;
+        }
+    
+        p {
+          font-size: 1.8vw;
+          text-align: center;
+          opacity: 0.6;
+        }
+    
+        button {
+          background-color: var(--fourth-color);
+          height: 100%;
+          border: none;
+          color: var(--third-color);
+          font-weight: 600;
+          transition: 0.5s;
+          font-size: 2vw;
+          border-radius: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.4rem 0.5rem;
+        }
+      }
+
+      .infos {
+        .infosi {
+          p {
+            font-size: 1.5vw;
+          }
+        }
+      }
+    } 
+  }

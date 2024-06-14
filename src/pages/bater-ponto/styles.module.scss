@@ -3,7 +3,6 @@
     width: 100vw;
     height: 100vh;
 
-  
     header {
         background-color: var(--second-color);
         height: 15%;
@@ -13,7 +12,6 @@
         justify-content: end;
         padding: 0rem 2rem;
 
-  
         div {
             display: flex;
             justify-content: space-between;
@@ -136,5 +134,57 @@
             color: var(--fourth-color);
         }
 
+    }
+}
+
+@media screen and (max-width: 520px){
+    .baterponto {
+        header {
+            width: 100vw;
+
+            div {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                .texth {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .dinfos {
+
+            .webcamContainer {
+                margin-right: 1.5rem;
+                position: absolute;
+                width: 90%;
+            }
+
+            .cam {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+    
+            .capture {
+                width: 100%;
+            }
+
+            .infos {
+                width: 80%;
+
+                .firstdiv {
+                    font-size: 0.8rem;
+                }
+    
+                .secondiv {
+                    font-size: 0.8rem;
+                }
+            }
+
+            button {
+                width: 80%;
+            }
+        }    
     }
 }

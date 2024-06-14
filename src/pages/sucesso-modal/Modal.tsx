@@ -14,7 +14,7 @@ export function Modal({isOpen, title, description}: IModal) {
                     <div>
                         <h1 className={styles.paragraph}>{title}</h1>
                         <p className={styles.paragraph}>{description}</p>
-                        <button><Link to={"/login"} className={styles.login}>Fazer login</Link></button>
+                        <Link to={"/login"} className={styles.login}><button>Fazer login</button></Link>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@
     display: flex;
 
     .maincontenthome {
+        margin-left: 2rem;
         background-color: var(--fourth-color);
         width: 100vw;
         display: flex;
@@ -84,5 +85,9 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 520px) {
+    
 }
 
