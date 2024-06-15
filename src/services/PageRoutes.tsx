@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "../pages/home/Home";
+import { Inicial } from "../pages/inicial/Inicial";
 import { CreateAccount } from "../pages/cadastrar/CreateAccount";
 import  { Login }  from "../pages/login/Login";
 import { ResetPassword } from "../pages/esqueceu-senha/ResetPassword";
@@ -19,7 +19,7 @@ import { Notificacoes } from "../pages/notificacoes/Notificacoes";
 function PagesRoutes() {
     return (
         <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Inicial />} />
             <Route path="/login" element={<Login />} />
             <Route path="/create-account" element={<CreateAccount />} />
             <Route path="/reset-password" element={<ResetPassword />} />

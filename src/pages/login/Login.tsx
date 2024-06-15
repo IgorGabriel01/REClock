@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Button } from "../../components/button/Button";
 import styles from "./styles.module.scss";
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -7,8 +6,6 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { DadosContext } from '../../services/ContextProvider';
 import { Link } from "react-router-dom";
 import { Aside } from "../../components/aside-log/Aside";
-
-
 
 export const Login: React.FC = () => {
 
@@ -141,7 +138,7 @@ export const Login: React.FC = () => {
                             e.preventDefault();
                         }
                     }}>
-                        <Button title="Entrar" />
+                        <button>Entrar</button>
                     </Link>
                 </form>
 

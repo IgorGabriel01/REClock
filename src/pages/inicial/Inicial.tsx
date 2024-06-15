@@ -8,7 +8,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link } from "react-router-dom";
 
-export const Home: React.FC = () => {
+export const Inicial: React.FC = () => {
 
     document.title = 'REClock - Bata seu ponto!'
 

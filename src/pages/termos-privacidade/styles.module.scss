@@ -124,3 +124,21 @@
         }
     }
 }
+
+@media screen and (max-width: 430px) {
+    .tspvmodal {
+        height: 100vh;
+        gap: 0rem;
+        justify-content: center;
+        gap: 1rem;
+        padding-top: 1.5rem;
+
+        .arrow {
+            left: 5%;
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+}

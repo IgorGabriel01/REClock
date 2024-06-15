@@ -275,3 +275,62 @@
         height: 100vh;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .dlogin {
+        .login {
+            gap: 2.5rem;
+            
+            .firstdiv {
+                h1 {
+                    font-size: 2.3rem;
+                }
+
+                .firstp {
+                    font-size: 1.5rem !important;
+                }
+            }
+
+            form {
+                gap: 0.8rem;
+                margin-bottom: 0.5rem;
+
+                .inputs {
+                    width: 80%;
+                }
+
+                .divinfosform {
+                    width: 75%;
+                }
+
+                .button {
+                    width: 80%;
+
+                    button {
+                        padding: 1.5rem;
+                        width: 100%;
+                        background-color: var(--second-color);
+                        color: var(--fourth-color);
+                    }
+                }
+            } 
+
+            .conecte {
+                margin-bottom: 0.5rem;
+
+                div {
+                    width: 25%;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .ftext {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
