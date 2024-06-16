@@ -19,6 +19,7 @@
                 font-size: 1.8rem;
             }
         }
+
         .firstDiv {
             width: 70%;
             height: 50%;
@@ -29,7 +30,7 @@
             color: var(--fourth-color);
             display: flex;
             flex-direction: column;
-            overflow-y: auto; 
+            overflow-y: auto;
             overflow-x: hidden;
             position: absolute;
 
@@ -46,7 +47,7 @@
 
                 p {
                     font-size: 0.8rem;
-                    padding: 5px;
+                    padding: 0.1rem;
                     margin-right: 2%;
                 }
             }
@@ -60,15 +61,16 @@
                 background-color: var(--third-color);
                 color: var(--fourth-color);
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                align-items: center;           
+                align-items: center;
 
                 .inf {
                     font-size: 0.8rem;
                 }
 
-                .info{
+                .info {
                     display: inline-block;
-                    width: 20%;
+                    margin-left: 5%;
+                    padding: 0.1rem;
                     text-align: center;
                     font-size: 0.8rem;
                 }
@@ -82,10 +84,10 @@
         display: flex;
         width: 100vw;
         height: 100vh;
-    
+
         .pontos {
             width: 100%;
-    
+
             header {
                 height: 10%;
                 width: 100%;
@@ -93,6 +95,7 @@
                 color: var(--third-color);
                 display: flex;
                 justify-content: center;
+
                 h1 {
                     margin-top: 03%;
                     color: var(--third-color);
@@ -100,20 +103,19 @@
                     font-size: 1.8rem;
                 }
             }
+
             .firstDiv {
-                width: 70%;
-                background-color: red;
-                height: 50%;
+                width: 90%;
+                height: 60%;
                 top: 50%;
-                left: 25%;
-                padding: 10px;
+                left: 53%;
                 color: var(--fourth-color);
                 display: flex;
                 flex-direction: column;
-                overflow-y: auto; 
+                overflow-y: auto;
                 overflow-x: hidden;
                 position: absolute;
-    
+
                 .secondDiv {
                     background-color: var(--second-color);
                     width: 100%;
@@ -122,41 +124,35 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 0.5rem;
-                    gap: 19%;
+                    padding: 1rem;
+
                     p {
-                        margin-right: -10%;
                         font-size: 0.6rem;
-                        padding: 1px;
                     }
                 }
-    
+
                 .thirdDiv {
                     width: 100%;
                     display: flex;
-                    padding: 0.5rem;
-                    height: 25%;
-                    gap: 19%;
+                    height: 15%;
                     background-color: var(--third-color);
                     color: var(--fourth-color);
                     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                    align-items: center;       
-                        
-    
+                    align-items: center;
+                    padding: 0.5rem 3rem;
+
                     .inf {
                         font-size: 0.6rem;
                     }
-    
-                    .info{
-                        display: inline-block;
-                        width: 30%;
+
+                    .info {
                         text-align: center;
-                        font-size: 0.8rem;
-                        margin-right: -12%;
+                        font-size: 0.6rem;
+                        margin-right: -18%;
+                        padding: -7rem;
                     }
                 }
             }
         }
     }
-       
 }
