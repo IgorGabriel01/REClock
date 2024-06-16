@@ -87,7 +87,42 @@
     }
 }
 
-@media screen and (max-width: 520px) {
-    
+@media screen and (max-width: 430px) {
+    .home {
+        .maincontenthome {
+            margin-left: 0.5rem;
+            gap: 0;
+
+            .contenthome {
+                gap: 1.5rem;
+
+                h2 {
+                    font-size: 1rem;
+                }
+
+                .primeiroex {
+
+                    .firstdivex {
+                        div {
+                            p {
+                                font-size: 0.6rem;
+                            }
+                        }
+
+                        p {
+                            font-size: 0.6rem;
+                        }
+                    }
+
+                    .seconddivex {
+                        font-size: 0.8rem;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 2rem;
+                    }
+                }
+            }
+        }
+    }
 }
 

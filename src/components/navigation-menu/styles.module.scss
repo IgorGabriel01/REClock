@@ -265,13 +265,15 @@
     .infos {
       display: none;
     } 
-  }
+}
 
-  @media screen and (max-width: 520px) { 
+@media screen and (max-width: 520px) { 
     .navigation {
+      gap: 0.5rem;
+
       .firstdivinfos{
         .dfirst {
-          margin-bottom: 4rem;
+          margin-bottom: 2.5rem;
 
           img {
             width: 5vw;
@@ -316,12 +318,23 @@
         }
       }
 
-      .infos {
-        .infosi {
-          p {
+    .infos {
+      .infosi {
+        p {
             font-size: 1.5vw;
-          }
         }
       }
-    } 
+    }
+  } 
+}
+
+@media screen and (max-width: 520px) {
+  .navigation {
+    gap: 4.5rem;
+    justify-content: start;
+
+    .infos {
+      margin-bottom: 0;
+    }
   }
+}
