@@ -44,42 +44,31 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 1.2rem 4rem;
-
-                p {
-                    font-size: 0.8rem;
-                    padding: 0.1rem;
-                    margin-right: 2%;
-                }
+                font-size: 0.8rem;
+                
             }
 
             .thirdDiv {
                 width: 100%;
                 display: flex;
-                padding: 0.5rem 3rem;
+                padding: 0.5rem 1.5rem;
                 justify-content: space-between;
-                gap: 17.5%;
+                gap: 15.5%;
                 background-color: var(--third-color);
                 color: var(--fourth-color);
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
                 align-items: center;
-
-                .inf {
-                    font-size: 0.8rem;
-                }
+                font-size: 0.8rem;
 
                 .info {
-                    display: inline-block;
                     margin-left: 5%;
-                    padding: 0.1rem;
-                    text-align: center;
-                    font-size: 0.8rem;
                 }
             }
         }
     }
 }
 
-@media screen and (min-width: 415px) and (max-width: 840px) {
+@media screen and (min-width: 315px) and (max-width: 1040px) {
     .meuspontos {
         display: flex;
         width: 100vw;
@@ -139,17 +128,12 @@
                     color: var(--fourth-color);
                     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
                     align-items: center;
-                    padding: 0.5rem 3rem;
-
-                    .inf {
-                        font-size: 0.6rem;
-                    }
+                    padding: 0;
 
                     .info {
-                        text-align: center;
+                        padding: 0;
+                        margin: 0;
                         font-size: 0.6rem;
-                        margin-right: -18%;
-                        padding: -7rem;
                     }
                 }
             }
