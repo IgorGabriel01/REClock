@@ -68,6 +68,7 @@ export function ModalTask({ isOpen, onClose, onTaskAdded }: IModal) {
                 </div>
 
                 <input
+                    className={styles.input}
                     type="text"
                     placeholder="Adicione uma nova tarefa"
                     value={task}

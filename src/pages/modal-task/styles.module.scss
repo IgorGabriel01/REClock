@@ -22,168 +22,166 @@
         flex-direction: column;
         align-items: center;
 
-       
-    }
-
-    .headerTask {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: var(--third-color);
-        color: var(--fourth-color);
-        width: 100%;
-        padding: 10px 20px;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        height: 25.5%;
-    }
-
-    .arrowicon {
-        font-size: 2rem;
-        margin: 0rem 0rem 2rem 0.8rem;
-        position: absolute;
-        z-index: 99999;
-        transition: 0.5s;
-    }
-
-    .arrowicon:hover {
-        cursor: pointer;
-        opacity: 0.7;
-        transition: 0.5s;
-    }
-
-    input {
-        position: absolute;
-        top: 22.9%;
-        left: 24.5%;
-        height: 46px;
-        width: 47%;
-        padding: 10px;
-        border-radius: 7px;
-        border: solid 2px  var(--third-color);
-    }
-
-    button {
-        font-size: 0.9rem;
-        position: absolute;
-        left: 71%;
-        top: 23.2%;
-        font-weight: 500;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        border: none;
-        border-radius: 5px;
-        height: 1px;
-        transition: 0.5s;
-        padding: 1.3rem;
-        background-color: var(--second-color);
-        color: var(--fourth-color);
-        cursor: pointer;
-
-        .add {
-            font-size: 20px;
-            margin-left: 10%;
-        }
-    }
-
-    button:hover {
-        background-color: var(--third-color);
-        transition: 0.5s;
-    }
-
-    h1 {
-        margin-left: 39%;
-        font-size: 33px;
-        margin-bottom: 4%;
-    }
-
-    .tasks {
-        display: flex;
-        flex-direction: column;
-        margin-top: 10%;
-        height: 58%;
-        width: 88%;
-        gap: 3px;
-        overflow-y: auto;
-        color:var(--sixth-color);
-        
- 
-        .divMenssage{
+        .headerTask {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
-
-            p {
-                font-size: 0.8rem;
-                font-weight: 600;
-
-            }
-            .completedCountMessage {
-                margin: 0;
-                padding: 0;
-            }
-
-        }
-
-        .taskDetail {
-            background-color: #68B5CE;
-            min-height: 13%;
-            border-radius: 8px;
-            color: black;
-            padding: 18px;
-            font-size: 14px;
-            display: flex;
             align-items: center;
-            justify-content: space-between;
-            position: relative;
-            border: solid 2px var(--third-color);
-
-           
-        }
-
-        .completed {
-            text-decoration: line-through;
-            opacity: 0.8;          
-        }
-
-        .checkIcon {
-            margin-right: 10px;
-            cursor: pointer;
-            color: var(--third-color);
-            font-size: 20px;
-            font-weight: 200;
-
-            &.completed {
-                color: rgb(0, 255, 0); 
-                
-            }
-        }
-
-        .deleteIcon {
+            background-color: var(--third-color);
             color: var(--fourth-color);
-            transition: 0.2s;
-            cursor: pointer;
+            width: 100%;
+            padding: 10px 20px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            height: 25.5%;
         }
-
-        .deleteIcon:hover {
-            color: red;
-            cursor: pointer;
-          }
-
-        .taskText {  
-            flex-grow: 1;
-            margin-left: 10px;
-            margin-right: 10px;
-            word-break: break-word; 
-            font-size: 15px;
+    
+        .arrowicon {
+            font-size: 2rem;
+            margin: 0rem 0rem 2rem 0.8rem;
+            position: absolute;
+            z-index: 99999;
+            transition: 0.5s;
         }
-    }
-
-    .completedCountMessage {
-         margin-top: 0.9rem;   
+    
+        .arrowicon:hover {
+            cursor: pointer;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+    
+        .input {
+            position: absolute;
+            top: 22.9%;
+            left: 24.5%;
+            height: 46px;
+            width: 45%;
+            padding: 10px;
+            border-radius: 7px;
+            border: solid 2px  var(--third-color);
+        }
+    
+        button {
+            font-size: 0.9rem;
+            position: absolute;
+            left: 71%;
+            top: 23.2%;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            border: none;
+            border-radius: 5px;
+            height: 1px;
+            transition: 0.5s;
+            padding: 1.3rem;
+            background-color: var(--second-color);
+            color: var(--fourth-color);
+            cursor: pointer;
+    
+            .add {
+                font-size: 20px;
+                margin-left: 10%;
+            }
+        }
+    
+        button:hover {
+            background-color: var(--third-color);
+            transition: 0.5s;
+        }
+    
+        h1 {
+            margin-left: 39%;
+            font-size: 33px;
+            margin-bottom: 4%;
+        }
+    
+        .tasks {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10%;
+            height: 58%;
+            width: 88%;
+            gap: 3px;
+            overflow-y: auto;
+            color:var(--sixth-color);
+            
+     
+            .divMenssage{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+    
+                p {
+                    font-size: 0.8rem;
+                    font-weight: 600;
+    
+                }
+                .completedCountMessage {
+                    margin: 0;
+                    padding: 0;
+                }
+    
+            }
+    
+            .taskDetail {
+                background-color: #68B5CE;
+                min-height: 13%;
+                border-radius: 8px;
+                color: black;
+                padding: 18px;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                border: solid 2px var(--third-color);
+    
+               
+            }
+    
+            .completed {
+                text-decoration: line-through;
+                opacity: 0.8;          
+            }
+    
+            .checkIcon {
+                margin-right: 10px;
+                cursor: pointer;
+                color: var(--third-color);
+                font-size: 20px;
+                font-weight: 200;
+    
+                &.completed {
+                    color: rgb(0, 255, 0); 
+                    
+                }
+            }
+    
+            .deleteIcon {
+                color: var(--fourth-color);
+                transition: 0.2s;
+                cursor: pointer;
+            }
+    
+            .deleteIcon:hover {
+                color: red;
+                cursor: pointer;
+              }
+    
+            .taskText {  
+                flex-grow: 1;
+                margin-left: 10px;
+                margin-right: 10px;
+                word-break: break-word; 
+                font-size: 15px;
+            }
+        }
+    
+        .completedCountMessage {
+             margin-top: 0.9rem;   
+        }
     }
 }
 
